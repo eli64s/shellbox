@@ -5,10 +5,8 @@
 <br>
 BASHY
 </h1>
-<h3 align="center">📍 BASHY: helper scripts and more!</h3>
-<h3 align="center">🚀 Developed with the software and tools below.</h3>
+<h3 align="center">📍 Python automation scripts</h3>
 <p align="center">
-
 <img src="https://img.shields.io/badge/Markdown-000000.svg?style=for-the-badge&logo=Markdown&logoColor=white" alt="" />
 <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="md" />
 </p>
