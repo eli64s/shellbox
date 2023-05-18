@@ -3,7 +3,7 @@
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>
-BASHY
+PyBash
 </h1>
 <h3 align="center">📍 Python automation scripts</h3>
 <p align="center">
