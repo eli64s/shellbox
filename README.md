@@ -5,10 +5,12 @@
 <br>
 PyBash
 </h1>
-<h3 align="center">📍 Python automation scripts</h3>
+<h3 align="center">📍 Make your Python programming more powerful with Bash scripting.</h3>
+<h3 align="center">🚀 Developed with the software and tools below.</h3>
 <p align="center">
-<img src="https://img.shields.io/badge/Markdown-000000.svg?style=for-the-badge&logo=Markdown&logoColor=white" alt="" />
-<img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="md" />
+
+<img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="" />
+<img src="https://img.shields.io/badge/Markdown-000000.svg?style=for-the-badge&logo=Markdown&logoColor=white" alt="pack" />
 </p>
 
 </div>
@@ -23,7 +25,7 @@ PyBash
 - [🚀 Getting Started](#-getting-started)
   - [✅ Prerequisites](#-prerequisites)
   - [💻 Installation](#-installation)
-  - [🤖 Using PyBash](#-using-bashy)
+  - [🤖 Using PyBash](#-using-pybash)
   - [🧪 Running Tests](#-running-tests)
 - [🛠 Future Development](#-future-development)
 - [🤝 Contributing](#-contributing)
@@ -132,9 +134,7 @@ chmod +x main.sh
 <hr />
 
 ## 🛠 Future Development
-- [X] [📌  COMPLETED-TASK]
-- [ ] [📌  INSERT-TASK]
-- [ ] [📌  INSERT-TASK]
+- [ ] Add more helper utility scripts.
 
 
 ---
