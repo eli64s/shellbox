@@ -23,7 +23,7 @@ PyBash
 - [🚀 Getting Started](#-getting-started)
   - [✅ Prerequisites](#-prerequisites)
   - [💻 Installation](#-installation)
-  - [🤖 Using BASHY](#-using-bashy)
+  - [🤖 Using PyBash](#-using-bashy)
   - [🧪 Running Tests](#-running-tests)
 - [🛠 Future Development](#-future-development)
 - [🤝 Contributing](#-contributing)
@@ -34,7 +34,7 @@ PyBash
 
 ## 📍Overview
 
-BASHY is a set of command shell scripts to help automate common tasks.
+PyBash is a set of command shell scripts to help automate common tasks.
 
 ## 🔮 Feautres
 
@@ -103,14 +103,14 @@ Before you begin, ensure that you have the following prerequisites installed:
 
 ### 💻 Installation
 
-1. Clone the BASHY repository:
+1. Clone the PyBash repository:
 ```sh
-git clone https://github.com/eli64s/BASHY
+git clone https://github.com/eli64s/PyBash
 ```
 
 2. Change to the project directory:
 ```sh
-cd BASHY
+cd PyBash
 ```
 
 3. Install the dependencies:
@@ -118,7 +118,7 @@ cd BASHY
 chmod +x main.sh
 ```
 
-### 🤖 Using BASHY
+### 🤖 Using PyBash
 
 ```sh
 ./main.sh
