@@ -1,10 +1,11 @@
 <div align="center">
-  <h1 align="center">
-    <img src="https://img.icons8.com/nolan/64/py.png" alt="py"/>
-    <img height="32" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/multiply.png" alt="multiply"/>
-    <img src="https://img.icons8.com/nolan/64/console.png" alt="console"/>
-<br>PyraShell</h1>
-<h3 align="center">📍 Connecting Python with the simplicity of the Shell.</h3>
+<h1 align="center">
+  <img src="https://img.icons8.com/nolan/128/py.png" alt="py" style="display:inline-block;" height="75" />
+  <img src="https://img.icons8.com/nolan/128/1A6DFF/C822FF/multiply.png" alt="multiply" style="display:inline-block;" height="45" />
+  <img src="https://img.icons8.com/nolan/128/console.png" alt="console" style="display:inline-block;" height="75" />
+  <br>PyraShell
+</h1>
+<h3 align="center">📍 Automate Python using the power of the Shell!</h3>
 <h3 align="center">⚙️ Developed with the software and tools below:</h3>
 <p align="center">
 <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="Bash" />
@@ -29,6 +30,7 @@
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 - [👏 Acknowledgements](#-acknowledgements)
+  - [Icons](#icons)
 
 ---
 
@@ -56,9 +58,6 @@ Feature | Description |
 
 ---
 
-
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-github-open.svg" width="80" />
-
 ## 📂 Project Structure
 
 
@@ -79,8 +78,6 @@ repo
 ```
 
 ---
-
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-src-open.svg" width="80" />
 
 ## 🧩 Modules
 
@@ -154,7 +151,9 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 👏 Acknowledgements
 
+### Icons
 - <a  href="https://icons8.com/icon/52515/console">Console</a> icon by <a href="https://icons8.com">Icons8</a>
+- <a  href="https://icons8.com/icon/110627/multiply">Multiply</a> icon by <a href="https://icons8.com">Icons8</a>
 - <a  href="https://icons8.com/icon/59940/py">Py</a> icon by <a href="https://icons8.com">Icons8</a>
 
 ---
