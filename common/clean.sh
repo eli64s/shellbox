@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# Backup files
-find . -type f -name "*.py-e" -delete 
+# Remove backup files and Python cache files
+find . -type f \( -name "*.py-e" \
+                  -o -name "*.DS_Store" \
+                  -o -name "*.py[co]" \) -delete
 
-# Clean up Python cache files
-find . -type f -name "*.DS_Store" -ls -delete
-find . -type f -name "*.py[co]" -delete
-find . -type d -name "__pycache__" -exec rm -rf {} +
+# Remove cache directories and VS Code settings
+find . -type d \( -name "__pycache__" \
+                  -o -name ".ipynb_checkpoints" \
+                  -o -name ".ruff_cache" \
+                  -o -name ".vscode" \) -execdir rm -rf {} +
 
-# Remove build artifacts
-rm -rf build/ dist/ *.egg-info/
+# Remove build artifacts, pytest cache, and benchmarks
+rm -rf build/ dist/ *.egg-info/ .pytest_cache/ .benchmarks/
 
-# Remove Jupyter notebook checkpoints
-find . -type d -name ".ipynb_checkpoints" -exec rm -rf {} +
-
-# Remove pytest cache
-rm -rf .pytest_cache/
+# Remove specific files
+rm -rf docs/raw_data.csv *.log *.out *.rdb
