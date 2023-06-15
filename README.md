@@ -1,13 +1,11 @@
-
 <div align="center">
-<h1 align="center">
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
-<br>
-PyraShell
-</h1>
+  <h1 align="center">
+    <img src="https://img.icons8.com/nolan/64/py.png" alt="py"/>
+    <img height="32" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/multiply.png" alt="multiply"/>
+    <img src="https://img.icons8.com/nolan/64/console.png" alt="console"/>
+<br>PyraShell</h1>
 <h3 align="center">📍 Connecting Python with the simplicity of the Shell.</h3>
 <h3 align="center">⚙️ Developed with the software and tools below:</h3>
-
 <p align="center">
 <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="Bash" />
 <img src="https://img.shields.io/badge/Anaconda-44A833.svg?style=for-the-badge&logo=Anaconda&logoColor=white" alt="Anaconda" />
@@ -30,7 +28,7 @@ PyraShell
 - [🗺 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
-- [👏 References](#-references)
+- [👏 Acknowledgements](#-acknowledgements)
 
 ---
 
@@ -154,8 +152,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 👏 References
+## 👏 Acknowledgements
 
-- [bash-docs](https://devhints.io/bash)
+- <a  href="https://icons8.com/icon/52515/console">Console</a> icon by <a href="https://icons8.com">Icons8</a>
+- <a  href="https://icons8.com/icon/59940/py">Py</a> icon by <a href="https://icons8.com">Icons8</a>
 
 ---
