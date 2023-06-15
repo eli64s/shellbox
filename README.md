@@ -3,50 +3,66 @@
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>
-PyBash
+PyraShell
 </h1>
-<h3 align="center">📍 Make your Python programming more powerful with Bash scripting.</h3>
-<h3 align="center">🚀 Developed with the software and tools below.</h3>
+<h3 align="center">📍 Connecting Python with the simplicity of the Shell.</h3>
+<h3 align="center">⚙️ Developed with the software and tools below:</h3>
+
 <p align="center">
-
-<img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="" />
-<img src="https://img.shields.io/badge/Markdown-000000.svg?style=for-the-badge&logo=Markdown&logoColor=white" alt="pack" />
+<img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="Bash" />
+<img src="https://img.shields.io/badge/Anaconda-44A833.svg?style=for-the-badge&logo=Anaconda&logoColor=white" alt="Anaconda" />
+<img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white" alt="Python" />
+<img src="https://img.shields.io/badge/Markdown-000000.svg?style=for-the-badge&logo=Markdown&logoColor=white" alt="Markdown" />
 </p>
-
 </div>
 
 ---
+
 ## 📚 Table of Contents
 - [📚 Table of Contents](#-table-of-contents)
-- [📍Overview](#overview)
-- [🔮 Feautres](#-feautres)
-- [⚙️ Project Structure](#️-project-structure)
-- [💻 Modules](#-modules)
+- [📍 Overview](#-overview)
+- [💫 Features](#-features)
+- [📂 Project Structure](#-project-structure)
+- [🧩 Modules](#-modules)
 - [🚀 Getting Started](#-getting-started)
   - [✅ Prerequisites](#-prerequisites)
-  - [💻 Installation](#-installation)
-  - [🤖 Using PyBash](#-using-pybash)
-  - [🧪 Running Tests](#-running-tests)
-- [🛠 Future Development](#-future-development)
+  - [🖥 Installation](#-installation)
+- [🗺 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
-- [🪪 License](#-license)
-- [🙏 Acknowledgments](#-acknowledgments)
+- [📄 License](#-license)
+- [👏 References](#-references)
 
 ---
 
-## 📍Overview
 
-PyBash is a set of command shell scripts to help automate common tasks.
+## 📍 Overview
 
-## 🔮 Feautres
-
-> `[📌  INSERT-PROJECT-FEATURES]`
+PyraShell is a collection of Bash scripts designed to streamline common Python development processes, including creating project templates and cleaning up project directories. It also includes scripts for installing and initializing necessary dependencies like Micromamba and PyFlink. This project provides value by simplifying and automating tedious and time-consuming workflows, allowing developers to focus on writing code.
 
 ---
+
+## 💫 Features
+
+Feature | Description |
+|---|---|
+| **🏗 Structure and Organization** | The repository is well-organized with a clear directory structure containing installation scripts, common scripts for running tests and cleaning the project, and a cookie cutter script for generating new Python projects. |
+| **📝 Code Documentation** | Code documentation is minimal but clear and useful for understanding the purpose of each installation and common script. |
+| **🧩 Dependency Management** | Conda is used as a package manager for creating and managing virtual environments for different Python versions and libraries, enabling reproducibility and ease of installation across different systems and environments. |
+| **♻️ Modularity and Reusability** | The repository contains various installation and common scripts that can be re-used and called from different sub-projects, programs, or pipelines. |
+| **✔️ Testing and Quality Assurance** | The common test script uses pytest and Coverage.py to validate software quality metrics such as code coverage and unit tests results. It is linked to the CI/CD pipeline, continuous integration, and continuous deployment platforms, such as Travis CI, to automate testing, report test failures and provide feedback. |
+| **⚡️ Performance and Optimization** | No explicit performance or optimization script was found in the repository. |
+| **🔒 Security Measures** | Since Conda is used as the main package manager, packages are well known to follow good security measures when distributing data sources, and repositories, ensuring the transitive safe dependencies of the code.|
+| **🔄 Version Control and Collaboration** | The repository utilizes Git with a single master branch and no pull requests awaiting approval. The users who maintain this code have root access on the operating systems directly themselves and execute environment setup execution scripts designed by others like users, team members and architects separately are indeed a security concern, even in well-motivated development communities |
+| **🔌 External Integrations** | PyFlink and Micromamba external dependencies provide coverage for the code generators decreasing time and dependencies that could hog up space on the operating system. |
+| **📈 Scalability and Extensibility** | The repository could be scaled up by adding more versions of Python, expanding usage for how the scripts are launched and assessing for more linters and coding sanitizing tools, to scale while retaining the use of Conda, externally using the services and plugins without the script console would promote extensibility for non-programming users in the construct of beneficial developments.
+
+---
+
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-github-open.svg" width="80" />
 
-## ⚙️ Project Structure
+## 📂 Project Structure
+
 
 ```bash
 repo
@@ -55,123 +71,91 @@ repo
 │   ├── clean.sh
 │   ├── run.sh
 │   └── test.sh
-├── install
-│   ├── micromamba.sh
-│   └── pyflink.sh
-└── misc
-    └── create_project_template.sh
+├── cookie_cutter
+│   └── create_py_project.sh
+└── installation
+    ├── micromamba.sh
+    └── pyflink.sh
 
 4 directories, 7 files
 ```
+
 ---
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-src-open.svg" width="80" />
 
-## 💻 Modules
+## 🧩 Modules
+
 <details closed><summary>Common</summary>
 
-| File     | Summary                                                                                                                                                                                                                  | Module          |
-|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|
-| run.sh   | This code is a Bash script that activates a Conda environment and runs a Python script . It also sets environment variables if needed .                                                                                  | common/run.sh   |
-| clean.sh | This code is a Bash script that cleans up files and directories related to Python , Jupyter notebooks , and pytest . It deletes Python cache files , build artifacts , Jupyter notebook checkpoints , and pytest cache . | common/clean.sh |
-| test.sh  | This code is a Bash script that activates a conda environment , runs a coverage report , and then removes files and folders .                                                                                            | common/test.sh  |
+| File     | Summary                                                                                                                                                                                                                                                                                                                                                                                                       | Module          |
+|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|
+| run.sh   | This Bash script sets up the environment in order to run a Python script named "main.py" located in the "src" folder. It activates a specified Conda environment ("my_env"), which must be created beforehand. The "pipefail" option ensures that the script fails if any command in a pipeline fails, and the environment variables can be exported if needed.                                               | common/run.sh   |
+| clean.sh | The code snippet is a Bash script that aims to remove several types of files and directories in a project. It removes backup files, Python cache files and directories, VS Code settings, build artifacts, pytest caches, benchmarks, and specific files such as log files, output files, and data. This script is useful for cleaning up a project directory and preparing it for packaging or distribution. | common/clean.sh |
+| test.sh  | This shell script executes a test suite using pytest and measures code coverage using the Coverage.py library. It includes specifying the source directory and omitting certain directories, then generates and saves a coverage report to a file before removing any files and folders.                                                                                                                      | common/test.sh  |
 
 </details>
 
-<details closed><summary>Install</summary>
+<details closed><summary>Cookie_cutter</summary>
 
-| File          | Summary                                                                                                                                                                                                                                      | Module                |
-|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
-| micromamba.sh | This code is a Bash script that downloads and installs the latest version of Micromamba , a Python package manager , for the current operating system ( Linux or macOS ) . It also configures Micromamba to use the conda - forge channel by | install/micromamba.sh |
-| pyflink.sh    | This code checks for Java 11 and Python 3. 7 installations , downloads and extracts PyFlink , sets environment variables , and sets aliases for zsh . It then prints a message indicating that the PyFlink setup is complete .               | install/pyflink.sh    |
+| File                 | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Module                             |
+|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------|
+| create_py_project.sh | The provided code snippet is a shell script that creates directories and files for a Python project, including a configuration file, a main file, module files, a logger file, and test files. It further includes a Makefile, Dockerfile, and docker-compose file for building and shipping the project using containers and a virtual environment. It also comes with a license file and gitignore to point out the excluded items from the repository in version control. | cookie_cutter/create_py_project.sh |
+
+</details>
+
+<details closed><summary>Installation</summary>
+
+| File          | Summary                                                                                                                                                                                                                                                                                                                                                                             | Module                     |
+|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------|
+| micromamba.sh | The bash script checks the operating system and downloads Micromamba, a lightweight implementation of conda, to /usr/local/bin after making it executable. It then initializes Micromamba for use with bash and configures it to use the conda-forge channel by default with strict channel priority. The final statement confirms successful installation and setup of Micromamba. | installation/micromamba.sh |
+| pyflink.sh    | This code snippet checks if Java 11 and Python 3.7 are installed on the system and installs them if they are not present. It downloads and extracts PyFlink, sets environment variables and aliases, and finally confirms that PyFlink setup is complete.                                                                                                                           | installation/pyflink.sh    |
 
 </details>
 
-<details closed><summary>Misc</summary>
-
-| File                       | Summary                                                                                                                                                                           | Module                          |
-|:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------|
-| create_project_template.sh | This code creates a project directory structure , creates files for configuration , logging , and main script , and adds code for the main script , configuration , and logging . | misc/create_project_template.sh |
-
-</details>
-<hr />
+---
 
 ## 🚀 Getting Started
 
 ### ✅ Prerequisites
 
-Before you begin, ensure that you have the following prerequisites installed:
-> `[📌  INSERT-PROJECT-PREREQUISITES]`
+- [Bash](https://www.gnu.org/software/bash/)
+- [Python](https://www.python.org/)
 
-### 💻 Installation
+### 🖥 Installation
 
-1. Clone the PyBash repository:
+1. Clone the PyraShell repository:
 ```sh
-git clone https://github.com/eli64s/PyBash
+git clone https://github.com/eli64s/PyraShell
 ```
 
 2. Change to the project directory:
 ```sh
-cd PyBash
+cd PyraShell
 ```
 
-3. Install the dependencies:
-```sh
-chmod +x main.sh
-```
+---
 
-### 🤖 Using PyBash
+## 🗺 Roadmap
 
-```sh
-./main.sh
-```
-
-### 🧪 Running Tests
-```sh
-#run tests
-```
-
-<hr />
-
-## 🛠 Future Development
-- [ ] Add more helper utility scripts.
-
+- [ ] Create additional scripts for common Python development tasks.
 
 ---
 
 ## 🤝 Contributing
-Contributions are always welcome! Please follow these steps:
-1. Fork the project repository. This creates a copy of the project on your account that you can modify without affecting the original project.
-2. Clone the forked repository to your local machine using a Git client like Git or GitHub Desktop.
-3. Create a new branch with a descriptive name (e.g., `new-feature-branch` or `bugfix-issue-123`).
-```sh
-git checkout -b new-feature-branch
-```
-4. Make changes to the project's codebase.
-5. Commit your changes to your local branch with a clear commit message that explains the changes you've made.
-```sh
-git commit -m 'Implemented new feature.'
-```
-6. Push your changes to your forked repository on GitHub using the following command
-```sh
-git push origin new-feature-branch
-```
-7. Create a pull request to the original repository.
-Open a new pull request to the original project repository. In the pull request, describe the changes you've made and why they're necessary.
-The project maintainers will review your changes and provide feedback or merge them into the main branch.
+
+Contributions, issues and feature requests are welcome!
 
 ---
 
-## 🪪 License
+## 📄 License
 
-This project is licensed under the `[📌  INSERT-LICENSE-TYPE]` License. See the [LICENSE](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) file for additional info.
-
----
-
-## 🙏 Acknowledgments
-
-[📌  INSERT-DESCRIPTION]
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
+## 👏 References
+
+- [bash-docs](https://devhints.io/bash)
+
+---
