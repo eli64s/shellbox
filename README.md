@@ -3,7 +3,7 @@
   <img src="https://img.icons8.com/nolan/128/py.png" alt="py" style="display:inline-block;" height="75" />
   <img src="https://img.icons8.com/nolan/128/1A6DFF/C822FF/multiply.png" alt="multiply" style="display:inline-block;" height="45" />
   <img src="https://img.icons8.com/nolan/128/console.png" alt="console" style="display:inline-block;" height="75" />
-  <br>PyraShell
+  <br>PyAutoBash
 </h1>
 <h3 align="center">📍 Automate Python using the power of the Shell!</h3>
 <h3 align="center">⚙️ Developed with the software and tools below:</h3>
@@ -37,7 +37,7 @@
 
 ## 📍 Overview
 
-PyraShell is a collection of Bash scripts designed to streamline common Python development processes, including creating project templates and cleaning up project directories. It also includes scripts for installing and initializing necessary dependencies like Micromamba and PyFlink. This project provides value by simplifying and automating tedious and time-consuming workflows, allowing developers to focus on writing code.
+PyAutoBash is a collection of Bash scripts designed to streamline common Python development processes, including creating project templates and cleaning up project directories. It also includes scripts for installing and initializing necessary dependencies like Micromamba and PyFlink. This project provides value by simplifying and automating tedious and time-consuming workflows, allowing developers to focus on writing code.
 
 ---
 
@@ -119,14 +119,14 @@ repo
 
 ### 🖥 Installation
 
-1. Clone the PyraShell repository:
+1. Clone the PyAutoBash repository:
 ```sh
-git clone https://github.com/eli64s/PyraShell
+git clone https://github.com/eli64s/PyAutoBash
 ```
 
 2. Change to the project directory:
 ```sh
-cd PyraShell
+cd PyAutoBash
 ```
 
 ---
