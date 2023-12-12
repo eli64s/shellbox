@@ -1,13 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -eo pipefail
 
-# If you need to export environment variables, do it here
-# export API_KEY=""
+echo "Execution started: $(date)"
 
-# Activate the conda environment
+echo "Activating conda environment..."
 eval "$(conda shell.bash hook)"
 conda activate my_env
 
-# Run the Python script
-python src/main.py
+echo "Upgrading pip..."
+python -m pip install --upgrade pip
+
+echo "Execution complete: $(date)"
