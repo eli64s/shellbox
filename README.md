@@ -2,11 +2,10 @@
 # SHELLBOX
 ### *Automate & chill*
 
-<br>
-<img src="https://img.shields.io/github/languages/top/eli64s/shellbox?style=flat&color=blueviolet&logo=GNU%20Bash" alt="GitHub top language" />
-<img src="https://img.shields.io/github/license/eli64s/shellbox?style=flat&color=blueviolet" alt="GitHub license" />
-<img src="https://img.shields.io/github/last-commit/eli64s/shellbox?style=flat&color=blueviolet" alt="git-last-commit" />
-<img src="https://img.shields.io/github/commit-activity/m/eli64s/shellbox?style=flat&color=blueviolet" alt="GitHub commit activity" />
+![top-language](https://img.shields.io/github/languages/top/eli64s/shellbox?style=flat&color=blueviolet&logo=GNU%20Bash)
+![license](https://img.shields.io/github/license/eli64s/shellbox?style=flat&color=blueviolet)
+![last-commit](https://img.shields.io/github/last-commit/eli64s/shellbox?style=flat&color=blueviolet)
+![github-activity](https://img.shields.io/github/commit-activity/m/eli64s/shellbox?style=flat&color=blueviolet)
 
 ---
 
