@@ -1,13 +1,12 @@
-<div align="center">
-<h1 align="center">SHELLBOX</h1>
-<h3>◦ ShellBox: Unboxing Your Code's Potential!</h3>
-<h3>◦ Developed with the software and tools below.</h3>
+[<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="120" align="left">](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg)
+# SHELLBOX
+### *Automate & chill*
 
+<br>
+<img src="https://img.shields.io/github/languages/top/eli64s/shellbox?style=flat&color=blueviolet&logo=GNU%20Bash" alt="GitHub top language" />
 <img src="https://img.shields.io/github/license/eli64s/shellbox?style=flat&color=blueviolet" alt="GitHub license" />
 <img src="https://img.shields.io/github/last-commit/eli64s/shellbox?style=flat&color=blueviolet" alt="git-last-commit" />
 <img src="https://img.shields.io/github/commit-activity/m/eli64s/shellbox?style=flat&color=blueviolet" alt="GitHub commit activity" />
-<img src="https://img.shields.io/github/languages/top/eli64s/shellbox?style=flat&color=blueviolet" alt="GitHub top language" />
-</div>
 
 ---
 
@@ -31,24 +30,25 @@
 
 ##  Overview
 
-Shellbox is an orchestrated repository leveraging shell scripts to automate common tasks in a project's lifecycle. It accelerates the setup of Python and PyFlink environments, cleanses project directories, tests Python project's code coverage, and manages file and directory operations. Additionally, it aids in creating a scaffold for Python projects, inclusive of essential configuration files with docker setup. Collectively, Shellbox drives efficiency, traceability, and error management in project operations thereby streamlining development workflows.
+Shellbox is a versatile software development utility equipped with robust script orchestration features for increased efficiency and standardization across projects. It offers facilities for Dockerized application builds, PyPi uploading, and environment setup with Micromamba and PyFlink to ensure seamless development. Shellbox goes further in offering easy project maintenance solutions for cleaning, testing, and running scripts. It streamlines filesystem operations involving file name modifications and directory transfers. Additionally, Shellbox provides an intuitive template for Python project collaborations. Thus, it encapsulates essential development operations in value-added scripts.
 
 ---
 
 ##  Features
 
-|   | Feature           | Description                                                                                                                                                                         |
-|---|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ⚙️| **Architecture** | The codebase is organized around shell scripts for performing various common tasks, arranged in directories based on their role (e.g., "common", "files", "install", "templates").    |
-| 📄| **Documentation** | Lack of comprehensive documentation within the codebase. Better inline commenting, README or Wiki would improve clarity for other developers using this repository.                     |
-| 🔗| **Dependencies** | Scripts are mostly self-contained. There are some dependencies or assumptions for available tools like `conda`, `pytest`, `coverage.py`, `Java 11`, `Python 3.7`.                           |
-| 🧩| **Modularity** | The code is modular, each script performs a distinct operation which allows for easy updates and interchanging when necessary.                                                           |
-| 🧪| **Testing** | A testing strategy using `pytest` and the `coverage.py` library is implemented in the `test.sh` script. However, the repository doesn't have dedicated tests.                               |
-| ⚡️| **Performance** | The repository is composed of helper scripts that perform specific tasks. The performance of each script depends on the task it performs and can vary.                                         |
-| 🔐| **Security** | Security practices aren't explicitly addressed. Shell scripts could be dangerous if not handled carefully. However, no immediate security flaws are apparent.                              |
-| 🔀| **Version Control** | Utilizes Git for version control. Preparation for pre-commit configuration indicates a strategy for clean commits.                                                           |
-| 🔌| **Integrations** | The codebase includes scripts for integrating with docker and virtual environments like `conda`. It also includes `JUnit` installation for PyFlink testing.                           |
-| 📶| **Scalability** | Scripts are individually scalable. However, due to lack of integration tests or high-level orchestration, determined scalability of the entire system is a challenge.                  |
+|    | Feature                    | Description                 |
+|----|----------------------------|-----------------------------|
+| ⚙️  | **Architecture**           | The system structures comprehensive automation and management script strategies suiting Linux bash environment. It provides advanced solutions to script packaging and software installations along with maintenance, testing tooling and file manipulations. |
+| 📄  | **Documentation**          | The codebase lacks comments and README for explaining the purpose and workflow of scripts. It does not adhere to the standard best practices of maintaining rich in-code documentation. |
+| 🔗  | **Dependencies**           | Most scripts are standalone and require standard bash/shell tools. Specific scripts ferry dependencies on Docker, Deepsource and Python-related (pip, PyFlink) functions. |
+| 🧩  | **Modularity**             | The codebase is organized into distinct directories: builds, common, files, install and templates. Scripts are disjoint, catering to perform an individual dedicated task strongly advocating the modularity principle. |
+| 🧪  | **Testing**                | Test management for a Python project is encapsulated in the `test.sh` script leveraging pytest and coverage tooling in certain environments. No specific tests for these shell scripts. |
+| ⚡️  | **Performance**            | Performance validates effectively on the Linux Bash environment. Specifically, micromamba.sh and pyflink.sh feature performance-based code rendering faster installations. |
+| 🔐  | **Security**               | No explicit security measures are in place. Relies heavily on the user's awareness or setting correct permissions to ensure the security of shell scripts execution. |
+| 🔀  | **Version Control**        | Not applicable directly to each script. However, in the broader sense, it's feasible that version control is handled by Git as is standard for most GitHub repositories. |
+| 🔌  | **Integrations**           | A strong connection with Python tooling (pip, PyFlink), packaging (Docker), and static code review platform (Deepsource). |
+| 📶  | **Scalability**            | It's scale friendly as each script independently caters single dedicated use-case, proficient scalability-excel features—be seen while hosting python project structure, ensuring Docker deployments. |
+
 
 ---
 
@@ -58,6 +58,9 @@ Shellbox is an orchestrated repository leveraging shell scripts to automate comm
 ```sh
 └── shellbox/
     ├── .deepsource.toml
+    ├── builds/
+    │   ├── docker.sh
+    │   └── pypi.sh
     ├── common/
     │   ├── clean.sh
     │   ├── run.sh
@@ -80,99 +83,56 @@ Shellbox is an orchestrated repository leveraging shell scripts to automate comm
 
 <details closed><summary>Root</summary>
 
-| File                                                                              | Summary                                                                                                                                                                                                                                                                                                                                                                      |
-| ---                                                                               | ---                                                                                                                                                                                                                                                                                                                                                                          |
-| [.deepsource.toml](https://github.com/eli64s/shellbox/blob/main/.deepsource.toml) | This code sctructure contains various shell scripts used to perform tasks like cleaning, testing, running, modifying filenames, moving directories, installing Micromamba & PyFlink, and creating new Python projects. It also includes a `.deepsource.toml` configuration file setting the version and specifying the analyzer to be used, in this case, for shell scripts. |
+| File                                                                              | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---                                                                               | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [.deepsource.toml](https://github.com/eli64s/shellbox/blob/main/.deepsource.toml) | The code represents a project root directory structure for a script-based application written in shell. Main functionalities include: building the system using Docker and PyPi, ensuring standard program maintenance by providing clean, run, and test features, allowing filesystem management operations, handling software installs via Micromamba and PyFlink, and offering template for creating Python projects. It utilizes DeepSource for static code analysis on Shell scripts. |
 
 </details>
 
 <details closed><summary>Install</summary>
 
-| File                                                                                | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ---                                                                                 | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| [micromamba.sh](https://github.com/eli64s/shellbox/blob/main/install/micromamba.sh) | The install/micromamba.sh bash script identifies the host operating system, downloads the latest Micromamba version matching that OS, and sets it as executable. The script then moves it to a directory within the system path for ease of access, initializes Micromamba for a bash shell, and configures it to use the conda-forge channel by default. It's part of a broader codebase managing shell scripts for tasks like cleaning, testing, and modifying filenames. |
-| [pyflink.sh](https://github.com/eli64s/shellbox/blob/main/install/pyflink.sh)       | The pyflink.sh script checks for Java 11 and Python 3.7 installations and installs them if missing. It then downloads, extracts, and renames the PyFlink package. It sets environment variables for FLINK_HOME, PATH, and PYTHONPATH. Finally, the script creates zsh aliases for running, submitting, and stopping PyFlink jobs. This facilitates the setup process for PyFlink development environment.                                                                   |
+| File                                                                                | Summary                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ---                                                                                 | ---                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| [micromamba.sh](https://github.com/eli64s/shellbox/blob/main/install/micromamba.sh) | The script installs the latest version of Micromamba for Linux or MacOS. It identifies the OS, downloads Micromamba, assigns execution permissions, and relocates the file for global access. It initializes Micromamba, configures the default usage of conda-forge channel, and sets the channel priority to strict. The process terminates with a completion message.                                                 |
+| [pyflink.sh](https://github.com/eli64s/shellbox/blob/main/install/pyflink.sh)       | This script automates the environment setup for working with PyFlink. It checks and installs Java 11 and Python 3.7 if they're not present. It downloads and extracts PyFlink from its official source, moves it to the pyflink directory and sets the necessary environment variables. The script also sets related aliases for zsh. Once these steps are done, the shell environment is ready for PyFlink development. |
+
+</details>
+
+<details closed><summary>Builds</summary>
+
+| File                                                                       | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ---                                                                        | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| [pypi.sh](https://github.com/eli64s/shellbox/blob/main/builds/pypi.sh)     | The pypi.sh script defines several operations to clean the previous Python package data, build a new package, and deploy it to PyPI (Python Package Index). The deployment details include the package name, repository URL, username, and API key for package upload. Post successful package upload, a success message shows up in the console.                                                                                                                                                                                       |
+| [docker.sh](https://github.com/eli64s/shellbox/blob/main/builds/docker.sh) | The builds/docker.sh script simplifies the process of managing a Docker image. Firstly, it constructs a FULL_IMAGE_NAME variable from user-defined components. After creating Docker Buildx, three primary functions are called: `build_image` builds a Docker image using local context, `publish_image` publishes the newly created image to a Docker registry, and `buildx_image` efficiently constructs multi-platform images. The process culminates with echoing a completion statement along with the full image's name created. |
 
 </details>
 
 <details closed><summary>Common</summary>
 
-| File                                                                     | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ---                                                                      | ---                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| [run.sh](https://github.com/eli64s/shellbox/blob/main/common/run.sh)     | The provided `run.sh` shell script operates as a straightforward execution manager. It initiates execution logging with timestamps, eloquently handles errors, and activates a pre-specified Conda environment named my_env. Then, it updates pip, Python's package installer, to its latest version. The completion of the execution process is also logged with a timestamp for clarity and traceability.                                   |
-| [clean.sh](https://github.com/eli64s/shellbox/blob/main/common/clean.sh) | The bash script clean.sh provides utilities to cleanse a project directory. It removes build artifacts, Python file artifacts, test and coverage artifacts, and backup and Python cache files. It allows selective cleaning via specific commands or a comprehensive cleanup through the clean command. It supports error handling by checking command line arguments and gives assistance for usage.                                         |
-| [test.sh](https://github.com/eli64s/shellbox/blob/main/common/test.sh)   | This shell script tests a Python project's code coverage using pytest and the coverage.py library. It activates a virtual environment, sets up source directories to cover, specifies file/directory omissions, then runs and reports test coverage. Results are failed if coverage falls under 90%. The code resides as part of a larger structure, providing test functionality within Shellbox, a collection of scripts for project tasks. |
+| File                                                                     | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---                                                                      | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [run.sh](https://github.com/eli64s/shellbox/blob/main/common/run.sh)     | The `common/run.sh` script initiates a series of operations starting with the activation of the Conda environment my_env, followed by the upgrade of Python package installer, pip, in this environment. It sets bash-specific options to handle errors and enables pipelining. The start and completion times of these operations are displayed. The surrounding directory tree contains additional scripts for building, testing, cleaning, file modifications, moving directories, installations, and project creation. |
+| [clean.sh](https://github.com/eli64s/shellbox/blob/main/common/clean.sh) | The clean.sh script, best understood as a maintenance script, eliminates build, test, and temporary files from a Python project environment. The removal process has specialized functions catering to distinct targets-build artifacts, Python file artifacts, test and coverage artifacts, backup and Python cache files. This script, depending on the argument passed, invokes the respective function to remove the associated files and directories, enhancing hygiene and order in the working environment.         |
+| [test.sh](https://github.com/eli64s/shellbox/blob/main/common/test.sh)   | The `test.sh` script in the `common` directory activates the readmeai Conda environment and employs the `coverage` utility to execute pytest tests on the readmeai project's source code, ignoring files and folders patterned as __init__.py and tests. The coverage report displays missed details and execution stops if coverage dips below 90%. The directory tree presents a project structure supporting Docker and PyPI builds, installation scripts, efficient file management, and Python project templates.     |
 
 </details>
 
 <details closed><summary>Files</summary>
 
-| File                                                                                          | Summary                                                                                                                                                                                                                                                                                                                                                        |
-| ---                                                                                           | ---                                                                                                                                                                                                                                                                                                                                                            |
-| [modify_filenames.sh](https://github.com/eli64s/shellbox/blob/main/files/modify_filenames.sh) | The script in files/modify_filenames.sh navigates to a specified directory /GitHub/readme-ai/docs, checks for files, and if found, converts the filename to lowercase and replaces underscores with hyphens. If the converted filename differs from the original, it renames the file and outputs the change. It will exit if the directory path is incorrect. |
-| [move_directory.sh](https://github.com/eli64s/shellbox/blob/main/files/move_directory.sh)     | The provided Bash script, located in the `files` directory, moves a specified folder-GitHub/readme-ai/docs/archive-into another directory named Documents/folder, if both exist. If either directory doesn't exist, it prints an error message indicating which one is missing.                                                                                |
+| File                                                                                          | Summary                                                                                                                                                                                                                                                                                                                                                         |
+| ---                                                                                           | ---                                                                                                                                                                                                                                                                                                                                                             |
+| [modify_filenames.sh](https://github.com/eli64s/shellbox/blob/main/files/modify_filenames.sh) | The bash script primarily functions to identify files within the specified directory (/GitHub/readme-ai/docs) and alter their filenames. It performs two alterations: converting the characters to lowercase and replacing underscores with hyphens. Changes to filenames are printed for user confimation. If the folder isn't found, the script simply exits. |
+| [move_directory.sh](https://github.com/eli64s/shellbox/blob/main/files/move_directory.sh)     | The move_directory.sh script, residing in the files directory, is designed to move a certain directory from a specified current location to a destination on the system. The script first checks existence of both source and destination directories. If both exist, it executes the move, otherwise, it logs relevant warning messages.                       |
 
 </details>
 
 <details closed><summary>Templates</summary>
 
-| File                                                                                                | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ---                                                                                                 | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| [create_py_project.sh](https://github.com/eli64s/shellbox/blob/main/templates/create_py_project.sh) | The code consists of a bash script that automates the creation of a Python project. Specifically, it creates essential directories, Python scripts, configuration files, and setup files required for a Python package. It also generates a Dockerfile and a docker-compose file for containerization purposes. Additional files like a pre-commit config and a.gitignore file are created to interact with git. Specific automated configuration includes setting up a logger, data classes, main script, and a basic configuration script. |
+| File                                                                                                | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---                                                                                                 | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| [create_py_project.sh](https://github.com/eli64s/shellbox/blob/main/templates/create_py_project.sh) | The given script automates the process of setting up a new Python project. It creates the required directory structure (such as conf, scripts, setup etc.), initial files with their necessary code (like logger.py, conf.py, etc.), configures logger, command line argument parser, configurations, testing setup, and scripting boilerplates. It also prepares the project for Docker deployment and integration, generates necessary configuration files and adds an MIT license file, a configurable.gitignore and a Makefile with commonly used routines. |
 
 </details>
-
----
-
-##  Getting Started
-
-***Dependencies***
-
-Please ensure you have the following dependencies installed on your system:
-
-`- ℹ️ Dependency 1`
-
-`- ℹ️ Dependency 2`
-
-`- ℹ️ ...`
-
-###  Installation
-
-1. Clone the shellbox repository:
-```sh
-git clone https://github.com/eli64s/shellbox
-```
-
-2. Change to the project directory:
-```sh
-cd shellbox
-```
-
-3. Install the dependencies:
-```sh
-chmod +x main.sh
-```
-
-###  Running shellbox
-
-```sh
-./main.sh
-```
-
-###  Tests
-```sh
-bats *.bats
-```
-
----
-
-
-##  Project Roadmap
-
-> - [X] `ℹ️  Task 1: Implement X`
-> - [ ] `ℹ️  Task 2: Implement Y`
-> - [ ] `ℹ️ ...`
-
 
 ---
 
@@ -218,13 +178,7 @@ Once your PR is reviewed and approved, it will be merged into the main branch.
 ##  License
 
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-##  Acknowledgments
-
-- List any resources, contributors, inspiration, etc. here.
+This project is protected under the [Apache-2.0 license](LICENSE) License. For more details, refer to the [Apache License](http://www.apache.org/licenses/LICENSE-2.0) file.
 
 [**Return**](#Top)
 
