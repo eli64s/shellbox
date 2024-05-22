@@ -1,3 +1,7 @@
+#!/bin/zsh
+
+start_time=$SECONDS
+
 echo "Starting local environment setup for $USER@$(hostname)..."
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -124,4 +128,10 @@ echo "Verifying Git and Git LFS installation..."
 git --version
 git lfs --version
 
+end_time=$SECONDS
+elapsed_time=$((end_time - start_time))
+minutes=$((elapsed_time / 60))
+seconds=$((elapsed_time % 60))
+
+echo "Total installation time: $minutes minutes $seconds seconds"
 echo "Local dependencies successfully installed for $USER@$(hostname)! Happy building!"
