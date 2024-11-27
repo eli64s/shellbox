@@ -1,4 +1,4 @@
-# -- Makefile for Poetry projects
+# poetry commands: https://python-poetry.org/docs/
 
 POETRY := poetry
 REQUIREMENTS :

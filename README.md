@@ -28,10 +28,11 @@
 
 ## Overview
 
-All configurations files and utility scripts are organized into subdirectories based on their respective tools and purposes.
+This repository contains a combination of configuration files and bash scripts to automate various development tasks. The files are organized into directories based on their purpose, such as setting up project environments, configuring version control, and enhancing the development experience.
 
+###  Project Structure
 
-##  Project Structure
+The repository is structured as follows:
 
 ```sh
 └── dots/
@@ -48,8 +49,8 @@ All configurations files and utility scripts are organized into subdirectories b
     │   ├── .gitignore
     │   └── .gitignore_global
     ├── make
-    │   ├── poetry
-    │   └── uv
+    │   ├── Makefile-poetry
+    │   └── Makefile-uv
     ├── python
     │   ├── .ruff.toml
     │   ├── pyproject.toml
@@ -61,7 +62,9 @@ All configurations files and utility scripts are organized into subdirectories b
         └── .zshrc
 ```
 
-###  Project Index
+### Project Index
+
+Select a submodule to explore its contents:
 
 <details open>
 	<summary><b><code>DOTS/</code></b></summary>
@@ -267,15 +270,11 @@ All configurations files and utility scripts are organized into subdirectories b
 
 ---
 
-##  Getting Started
-
-The majority of files in this repository are configuration related. If you're looking for utility scripts to automate tasks, you can find them in the `bash` directory.
-
-### Installation
+## Installation
 
 To get started with the utility scripts, build the project from source:
 
-1. Clone the dots repository:
+1. Clone the repository:
 ```sh
 ❯ git clone https://github.com/eli64s/dots
 ```
@@ -285,30 +284,28 @@ To get started with the utility scripts, build the project from source:
 ❯ cd dots
 ```
 
-### Running Scripts
+## Running the Scripts
 
-My favorite script is [aggregate_docs.sh](bash/file-ops/aggregate_docs.sh), which concatenates all files from a GitHub repository into a single file. Define the repository URL, paths, and file formats to aggregate the files.
+One of my favorite scripts to use right now is [aggregate_docs.sh](bash/file-ops/aggregate_docs.sh), which concatenates all files from a GitHub repository into a single file. I've found this script useful when working with language model APIs for providing the model with robust context and up-to-date information.
 
-I've found this script useful for when working with large language model APIs, providing the model with robust context and latest updates on a given topic I'm researching.
-
-You can run the script directly from the command line:
+To run the script, provide the following arguments:
 
 ```sh
 bash bash/file-ops/aggregate_docs.sh \
-    -r https://github.com/pydantic/pydantic \
-    -p docs \
-    -o pydantic-docs.md \
-    -n pydantic \
-    -s "*.md"
+    -r https://github.com/pydantic/pydantic \ # Repository URL
+    -n pydantic \						  	  # Repository name
+    -o pydantic-docs.md \					  # Your output file
+    -p docs \								  # Repository directory to search and aggregate
+    -s "*.md"								  # File format to search for in the repository
 ```
 
-You can also give the script executable permissions and run it directly:
+Alternatively, make the script executable:
 
 ```sh
 chmod +x bash/file-ops/aggregate_docs.sh
 ```
 
-And then run the script:
+And run it directly:
 
 ```sh
 ./aggregate_docs.sh \
@@ -320,16 +317,16 @@ And then run the script:
 ```
 
 > [!TIP]
-> The shell scripts in this repository are designed to automate repetitive tasks and enhance productivity. Feel free to explore and adapt them to your workflow.
+> The [bash scripts][dots.bash] directory contains a variety of utility scripts for automating tasks like environment setup, file operations, and codebase management.
 
 <div align="left">
     <a href="#-configurations-files-and-utility-scripts">
-        <img src="assets/button.svg" width="100px" height="100px" alt="return-button">
+        <img src="assets/button.svg" width="88px" height="88px" alt="return-button">
     </a>
 </div>
 
-<img width="100%" height="4px" src="assets/line.svg" alt="line">
+---
 
 <!-- REFERENCE LINKS -->
 
-[return-button]: assets/button.svg
+[dots.bash]: https://github.com/eli64s/dots/tree/main/bash
