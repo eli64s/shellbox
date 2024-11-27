@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Determine the operating system type
 if [[ "$(uname -s)" == "Linux" ]]; then

@@ -1,0 +1,150 @@
+{
+  // Workbench settings
+  "workbench.colorTheme": "Digi-Angler Dark Theme",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorCustomizations": {},
+  "window.zoomLevel": 1,
+  "explorer.confirmDragAndDrop": false,
+
+  // Editor settings
+  "editor.fontSize": 14,
+  "editor.inlineSuggest.enabled": true,
+  "editor.stickyScroll.enabled": false,
+  "editor.accessibilitySupport": "off",
+  "editor.defaultFormatter": "charliermarsh.ruff",
+
+  // Terminal settings
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.inheritEnv": false,
+
+  // Git settings
+  "git.enableSmartCommit": true,
+  "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true
+  },
+  "projectManager.git.baseFolders": ["GitHub", "Documents/GitHub"],
+
+  // File associations and handling
+  "files.associations": {
+    "*.html": "html",
+    "*.md": "markdown"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // Language-specific settings
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    },
+    "editor.rulers": [88, 120],
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": null
+  },
+  "[jinja-html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+
+  // Python-specific settings
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "pythonTestExplorer.testFramework": "pytest",
+
+  // Ruff settings
+  "ruff.organizeImports": true,
+  "ruff.fixAll": true,
+
+  // AutoDocstring settings
+  "autoDocstring.docstringFormat": "numpy",
+  "autoDocstring.startOnNewLine": true,
+
+  // Test Explorer UI settings
+  "testExplorer.addToEditorContextMenu": true,
+  "testExplorer.showCollapseButton": true,
+  "testExplorer.showExpandButton": true,
+  "testExplorer.sort": "byLocation",
+  "testExplorer.onStart": "collapsed",
+  "testExplorer.onReload": "collapse",
+
+  // Jupyter and Notebook settings
+  "jupyter.askForKernelRestart": false,
+  "notebook.output.textLineLimit": 69,
+  "notebook.output.wordWrap": true,
+  "notebook.lineNumbers": "on",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports.ruff": true
+  },
+  "notebook.consolidatedRunButton": true,
+  "notebook.output.scrolling": true,
+  "notebook.defaultFormatter": "charliermarsh.ruff",
+
+  // Markdown settings
+  "markdownConverter.Parser.Toc.Levels": "1-3",
+  "markdown.preview.breaks": true,
+  "markdownFormatter.formatTable": true,
+  "markdown-preview-enhanced.enableHTML5Embed": true,
+  "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+  "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
+  "markdown-preview-enhanced.frontMatterRenderingOption": "table",
+  "markdown-preview-enhanced.HTML5EmbedUseLinkSyntax": true,
+  
+  // GitHub Copilot settings
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+
+  // Miscellaneous settings
+  "redhat.telemetry.enabled": false,
+  "hediet.vscode-drawio.resizeImages": null,
+  "cmake.configureOnOpen": true,
+  "html.format.wrapLineLength": 888,
+  "cSpell.language": "en,en-GB",
+}

@@ -14,6 +14,7 @@ function clean_build() {
     rm -fr dist/
     rm -fr .eggs/
     rm -fr site/
+    rm -fr .p
     find . -name '*.egg-info' -exec rm -fr {} +
     find . -name '*.egg' -exec rm -f {} +
 }
@@ -28,25 +29,24 @@ function clean_pyc() {
 
 function clean_test() {
     echo "Removing test and coverage artifacts..."
+    rm -f .coverage coverage.*
+    rm -fr .nox/
     rm -fr .tox/
-    rm -f .coverage coverage.xml
     rm -fr htmlcov/
-    rm -fr .pytest_cache/
+    rm .coverage
+    rm coverage.xml
 }
 
 function clean_backup_and_cache() {
     echo "Removing backup files and Python cache files..."
-    find . -type f \( -name "*.py-e" \
-                      -o -name "*.DS_Store" \
-                      -o -name "*.py[co]" \) -delete
-    echo "Removing cache directories and VS Code settings..."
-    find . -type d \( -name "__pycache__" \
-                      -o -name ".ipynb_checkpoints" \
-                      -o -name ".ruff_cache" \
-                      -o -name ".vscode" \) -execdir rm -rf {} +
+    rm -fr .mypy_cache/
+    rm -fr .pytest_cache/
+    rm -fr .ruff_cache/
+    find . -type f \( -name "*.py-e" -o -name "*.DS_Store" -o -name "*.py[co]" \) -delete
+    echo "Removing cache directories..."
+    find . -type d \( -name "__pycache__" -o -name ".ipynb_checkpoints" \) -exec rm -fr {} +
 }
 
-# Check for command line arguments
 if [ "$#" -eq 0 ]; then
     echo "Usage: $0 <command>"
     echo "Available commands: clean, clean-build, clean-pyc, clean-test, clean-backup-and-cache"

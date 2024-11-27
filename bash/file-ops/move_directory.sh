@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 folder_name="GitHub/readme-ai/docs/archive"
 

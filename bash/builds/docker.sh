@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-# Config
 USER="my-username"
 IMAGE="my-image"
 VERSION="latest"
 FULL_IMAGE_NAME="${USER}/${IMAGE}:${VERSION}"
-
-# Helper functions
+ 
 build_image() {
   echo "Building ${FULL_IMAGE_NAME}"
   docker build -t "${FULL_IMAGE_NAME}" .

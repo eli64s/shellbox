@@ -1,0 +1,113 @@
+[tool.poetry]
+name = "readmeai"
+version = "0.5.088"
+description = "README file generator, powered by large language model APIs 👾"
+authors = ["Eli <egsalamie@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/eli64s/readme-ai"
+documentation = "https://eli64s.github.io/readme-ai"
+keywords = [
+    "ai",
+    "ai-documentation",
+    "badge-generator",
+    "developer-tools",
+    "devtools",
+    "documentation",
+    "documentation-generator",
+    "markdown",
+    "markdown-generator",
+    "python",
+    "readme",
+    "readme-generator",
+    "readme-md",
+    "readme-md-generator",
+    "readme-template",
+]
+include = ["readmeai", "readmeai.*"]
+
+[tool.poetry.scripts]
+readmeai = "readmeai.cli.main:main"
+
+[tool.poetry.dependencies]
+python = "^3.9,<4.0.0"
+aiohttp = "^3.9.5"
+click = "^8.1.7"
+gitpython = "^3.1.31"
+openai = "^1.16.2"
+pydantic = "^2.8.0"
+pydantic-extra-types = "^2.9.0"
+pydantic-settings = "^2.4.0"
+pyyaml = "^6.0.1"
+requests = "^2.32.3"
+structlog = "^24.4.0"
+tenacity = "^8.2.2"
+tiktoken = "^0.4.0"
+tomli = {version = "*", python = "<3.11"}
+
+[tool.poetry.group.dev.dependencies]
+mypy = "*"
+pre-commit = "*"
+ruff = "*"
+
+[tool.poetry.group.test.dependencies]
+pytest = "=7.4.4"
+pytest-asyncio = "*"
+pytest-cov = "*"
+pytest-randomly = "*"
+pytest-sugar = "*"
+pytest-xdist = "*"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "*"
+mkdocs-material = "*"
+mkdocs-minify-plugin = "*"
+
+[tool.poetry.group.gemini]
+optional = true
+
+[tool.poetry.group.gemini.dependencies]
+google-generativeai = "*"
+
+[tool.poetry.group.anthropic]
+optional = true
+
+[tool.poetry.group.anthropic.dependencies]
+anthropic = "*"
+
+[tool.pytest.ini_options]
+addopts = [
+    "-vvv",
+    "-rfEsxX",
+    "--durations=10",
+    "--numprocesses=auto",
+    "--cov=readmeai",
+    "--cov-branch",
+    "--cov-report=xml",
+    "--cov-report=term-missing",
+]
+asyncio_default_fixture_loop_scope = "function"
+asyncio_mode = "auto"
+pythonpath = ["readmeai"]
+testpaths = ["tests"]
+
+[tool.coverage.report]
+exclude_also = [
+    "if __name__ == '__main__':",
+    "pragma: no cover",
+    "raise NotImplementedError",
+]
+fail_under = 80
+precision = 2
+show_missing = true
+skip_covered = true
+skip_empty = true
+sort = "cover"
+omit = [
+    "**/__init__.py",
+    "noxfile.py",
+]
+
+[build-system]
+requires = ["poetry-core", "setuptools"]
+build-backend = "poetry.core.masonry.api"

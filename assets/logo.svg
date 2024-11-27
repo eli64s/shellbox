@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f0f0" />
+      <stop offset="100%" stop-color="#e0e0e0" />
+    </linearGradient>
+    <!-- Circuit pattern -->
+    <pattern id="circuit" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M0,25 h50 M25,0 v50" stroke="#2563eb" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <!-- Adaptive Background -->
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <rect width="800" height="400" fill="url(#circuit)"/>
+
+  <!-- Main Circuit Frame -->
+  <g stroke="#2563eb" stroke-width="2.5" fill="none">
+    <path d="M100,100 H700 V300 H100 Z"/>
+    <!-- Connection nodes -->
+    <circle cx="100" cy="100" r="6"/>
+    <circle cx="700" cy="100" r="6"/>
+    <circle cx="700" cy="300" r="6"/>
+    <circle cx="100" cy="300" r="6"/>
+
+    <!-- Additional circuit details -->
+    <path d="M100,200 h50 l10,-10 h30 l10,10 h30 l10,-10 h30"/>
+    <path d="M700,200 h-50 l-10,-10 h-30 l-10,10 h-30 l-10,-10 h-30"/>
+    
+    <!-- Circuit branches -->
+    <path d="M400,100 v30 l10,10 v20 l-10,10 v30"/>
+    <path d="M400,300 v-30 l10,-10 v-20 l-10,-10 v-30"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="220" font-family="'JetBrains Mono', monospace" font-size="60" font-weight="bold" text-anchor="middle" fill="#2563eb">
+    DOTS
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="270" font-family="'JetBrains Mono', monospace" font-size="24" text-anchor="middle" fill="#2563eb">
+    configuration files
+  </text>
+</svg>

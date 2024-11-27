@@ -1,184 +1,334 @@
-[<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="120" align="left">](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg)
-# SHELLBOX
-### *Automate & chill*
+<div align="center">
 
-![top-language](https://img.shields.io/github/languages/top/eli64s/shellbox?style=flat&color=blueviolet&logo=GNU%20Bash)
-![license](https://img.shields.io/github/license/eli64s/shellbox?style=flat&color=blueviolet)
-![last-commit](https://img.shields.io/github/last-commit/eli64s/shellbox?style=flat&color=blueviolet)
-![github-activity](https://img.shields.io/github/commit-activity/m/eli64s/shellbox?style=flat&color=blueviolet)
+<img src="assets/logo-rainbow.svg" alt="dots">
 
----
+<p align="center">
 
-##  Table of Contents
-- [ Table of Contents](#-table-of-contents)
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ repository Structure](#-repository-structure)
-- [ Modules](#modules)
-- [ Getting Started](#-getting-started)
-    - [ Installation](#-installation)
-    - [ Running shellbox](#-running-shellbox)
-    - [ Tests](#-tests)
-- [ Roadmap](#-roadmap)
-- [ Contributing](#-contributing)
-- [ License](#-license)
-- [ Acknowledgments](#-acknowledgments)
+#### ◎ Configurations files and utility scripts
 
----
+</p>
 
+<img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?style=%7B0%7D&logo=Visual-Studio-Code&logoColor=white" alt="Visual%20Studio%20Code">
 
-##  Overview
+<img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat-square&logo=Python&logoColor=white" alt="Python">
 
-Shellbox is a versatile software development utility equipped with robust script orchestration features for increased efficiency and standardization across projects. It offers facilities for Dockerized application builds, PyPi uploading, and environment setup with Micromamba and PyFlink to ensure seamless development. Shellbox goes further in offering easy project maintenance solutions for cleaning, testing, and running scripts. It streamlines filesystem operations involving file name modifications and directory transfers. Additionally, Shellbox provides an intuitive template for Python project collaborations. Thus, it encapsulates essential development operations in value-added scripts.
+<img src="https://img.shields.io/badge/Pytest-0A9EDC.svg?style=flat-square&logo=Pytest&logoColor=white" alt="Pytest">
 
----
+<img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=flat-square&logo=GNU-Bash&logoColor=white" alt="GNU%20Bash">
 
-##  Features
+<img src="https://img.shields.io/badge/Ruff-D7FF64.svg?style=flat-square&logo=Ruff&logoColor=black" alt="Ruff">
 
-|    | Feature                    | Description                 |
-|----|----------------------------|-----------------------------|
-| ⚙️  | **Architecture**           | The system structures comprehensive automation and management script strategies suiting Linux bash environment. It provides advanced solutions to script packaging and software installations along with maintenance, testing tooling and file manipulations. |
-| 📄  | **Documentation**          | The codebase lacks comments and README for explaining the purpose and workflow of scripts. It does not adhere to the standard best practices of maintaining rich in-code documentation. |
-| 🔗  | **Dependencies**           | Most scripts are standalone and require standard bash/shell tools. Specific scripts ferry dependencies on Docker, Deepsource and Python-related (pip, PyFlink) functions. |
-| 🧩  | **Modularity**             | The codebase is organized into distinct directories: builds, common, files, install and templates. Scripts are disjoint, catering to perform an individual dedicated task strongly advocating the modularity principle. |
-| 🧪  | **Testing**                | Test management for a Python project is encapsulated in the `test.sh` script leveraging pytest and coverage tooling in certain environments. No specific tests for these shell scripts. |
-| ⚡️  | **Performance**            | Performance validates effectively on the Linux Bash environment. Specifically, micromamba.sh and pyflink.sh feature performance-based code rendering faster installations. |
-| 🔐  | **Security**               | No explicit security measures are in place. Relies heavily on the user's awareness or setting correct permissions to ensure the security of shell scripts execution. |
-| 🔀  | **Version Control**        | Not applicable directly to each script. However, in the broader sense, it's feasible that version control is handled by Git as is standard for most GitHub repositories. |
-| 🔌  | **Integrations**           | A strong connection with Python tooling (pip, PyFlink), packaging (Docker), and static code review platform (Deepsource). |
-| 📶  | **Scalability**            | It's scale friendly as each script independently caters single dedicated use-case, proficient scalability-excel features—be seen while hosting python project structure, ensuring Docker deployments. |
+<img src="https://img.shields.io/badge/Git-F05032.svg?style=flat-square&logo=Git&logoColor=white" alt="Git">
 
+<img src="https://img.shields.io/badge/Zsh-F15A24.svg?style=flat-square&logo=Zsh&logoColor=white" alt="Zsh">
 
----
+</div>
 
+<img width="100%" height="4px" src="assets/line.svg" alt="line">
 
-##  Repository Structure
+## Overview
+
+All configurations files and utility scripts are organized into subdirectories based on their respective tools and purposes.
 
 ```sh
-└── shellbox/
-    ├── .deepsource.toml
-    ├── builds/
-    │   ├── docker.sh
-    │   └── pypi.sh
-    ├── common/
-    │   ├── clean.sh
-    │   ├── run.sh
-    │   └── test.sh
-    ├── files/
-    │   ├── modify_filenames.sh
-    │   └── move_directory.sh
-    ├── install/
-    │   ├── micromamba.sh
-    │   └── pyflink.sh
-    └── templates/
-        └── create_py_project.sh
+.
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── Makefile
+├── README.md
+├── assets
+│   ├── line.svg
+│   └── logo.svg
+├── bash
+│   ├── builds
+│   │   ├── docker.sh
+│   │   └── pypi.sh
+│   ├── common
+│   │   ├── clean.sh
+│   │   ├── run.sh
+│   │   └── test.sh
+│   ├── file-ops
+│   │   ├── aggregate_docs.sh
+│   │   ├── chunk_docs.sh
+│   │   ├── modify_filenames.sh
+│   │   └── move_directory.sh
+│   ├── install
+│   │   ├── local_dependencies.sh
+│   │   ├── local_dependencies_uninstall.sh
+│   │   ├── micromamba.sh
+│   │   └── pyflink.sh
+│   └── project-setup
+│       ├── create_directory_structure.sh
+│       └── create_python_project.sh
+├── git
+├── make
+│   ├── poetry
+│   │   └── Makefile
+│   └── uv
+│       └── Makefile
+├── python
+│   ├── pyproject.toml
+│   └── pytest.ini
+├── vscode
+│   └── settings.json
+└── zsh
+
+15 directories, 27 files
 
 ```
 
+For more details about the available configurations and utility scripts, please refer to the table below:
+
+<details open>
+    <summary><b><code>SHELLBOX/</code></b></summary>
+    <details> <!-- __root__ Submodule -->
+        <summary><b>__root__</b></summary>
+        <blockquote>
+            <table>
+            </table>
+        </blockquote>
+    </details>
+    <details> <!-- python Submodule -->
+        <summary><b>python</b></summary>
+        <blockquote>
+            <table>
+                <tr>
+                    <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/python/pyproject.toml'>pyproject.toml</a></b></td>
+                    <td>- Generates README files using large language model APIs, enhancing developer productivity and documentation quality<br>- Integrates with various tools and libraries to streamline the process<br>- Supports Python 3.9 and above, emphasizing simplicity and efficiency in creating informative READMEs<br>- Visit the project homepage for more details and documentation.</td>
+                </tr>
+                <tr>
+                    <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/python/.ruff.toml'>.ruff.toml</a></b></td>
+                    <td>- Define codebase linting and formatting rules using .ruff.toml configuration file to maintain code quality and consistency across the project<br>- The file specifies excluded directories, target Python version, linting rules, fixable issues, and code formatting settings.</td>
+                </tr>
+            </table>
+        </blockquote>
+    </details>
+    <details> <!-- zsh Submodule -->
+        <summary><b>zsh</b></summary>
+        <blockquote>
+            <table>
+                <tr>
+                    <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/zsh/.zshrc'>.zshrc</a></b></td>
+                    <td>- Manages ZSH configuration, sets aliases, functions, and path modifications<br>- Sources Oh My ZSH, sets completion settings, and configures history<br>- Enables FZF settings and keybindings<br>- Handles 'uv' autocomplete<br>- Integrates Rust/Cargo and Google Cloud SDK paths<br>- Executes custom functions and autoloads<br>- Enhances shell navigation and history management.</td>
+                </tr>
+                <tr>
+                    <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/zsh/.zshenv'>.zshenv</a></b></td>
+                    <td>Define environment variables for project paths in the zsh configuration file to ensure proper setup and execution of the codebase.</td>
+                </tr>
+            </table>
+        </blockquote>
+    </details>
+    <details> <!-- vscode Submodule -->
+        <summary><b>vscode</b></summary>
+        <blockquote>
+            <table>
+                <tr>
+                    <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/vscode/settings.json'>settings.json</a></b></td>
+                    <td>- Configures various settings for the Visual Studio Code editor, including themes, font sizes, language-specific formatters, and extensions<br>- Manages preferences for workbench, editor, terminal, Git, file associations, language-specific settings, Python analysis, Ruff, AutoDocstring, Test Explorer UI, Jupyter, Notebook, Markdown, GitHub Copilot, and miscellaneous options.</td>
+                </tr>
+            </table>
+        </blockquote>
+    </details>
+    <details> <!-- git Submodule -->
+        <summary><b>git</b></summary>
+        <blockquote>
+            <table>
+                <tr>
+                    <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/git/.gitcommit_template'>.gitcommit_template</a></b></td>
+                    <td>- Defines a standardized commit message template for the project, ensuring concise and informative commit messages<br>- Encourages clear communication of changes made, their purpose, and any related issues<br>- Facilitates better tracking, understanding, and collaboration within the codebase.</td>
+                </tr>
+                <tr>
+                    <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/git/.gitignore_global'>.gitignore_global</a></b></td>
+                    <td>- Prevent unnecessary files from being tracked in the project repository by specifying global ignore patterns in the `.gitignore_global` file<br>- This ensures that common editor and system files are excluded, maintaining a clean and efficient version control system.</td>
+                </tr>
+                <tr>
+                    <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/git/.gitconfig'>.gitconfig</a></b></td>
+                    <td>- Configure Git settings for a streamlined workflow, including user info, editor preferences, commit templates, aliases, and visual enhancements<br>- Improve productivity with features like auto-rebasing, conflict resolution styles, and custom delta syntax highlighting.</td>
+                </tr>
+            </table>
+        </blockquote>
+    </details>
+    <details> <!-- bash Submodule -->
+        <summary><b>bash</b></summary>
+        <blockquote>
+            <details>
+                <summary><b>install</b></summary>
+                <blockquote>
+                    <table>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/install/micromamba.sh'>micromamba.sh</a></b></td>
+                            <td>- Facilitates seamless installation and setup of Micromamba, a lightweight package manager, across Linux and macOS systems<br>- Automatically determines the OS type, downloads the latest Micromamba version, configures it to use the conda-forge channel, and ensures it's executable from any location<br>- Simplifies the process for users to quickly leverage Micromamba for package management.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/install/local_dependencies_uninstall.sh'>local_dependencies_uninstall.sh</a></b></td>
+                            <td>- Perform local environment cleanup by uninstalling various development tools and dependencies like pyenv, goenv, Node.js, Poetry, Git, Git LFS, kubectl, kubectx, and Helm<br>- Additionally, clean up any remaining configuration files to ensure a fresh start for the local environment<br>- The script logs each step and provides a summary of the cleanup time upon completion.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/install/pyflink.sh'>pyflink.sh</a></b></td>
+                            <td>- Automates PyFlink setup by checking and installing Java 11, Python 3.7, and downloading PyFlink<br>- Sets environment variables and aliases for zsh, enabling easy PyFlink usage<br>- Streamlines the initial setup process for PyFlink development and execution within the project architecture.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/install/local_dependencies.sh'>local_dependencies.sh</a></b></td>
+                            <td>- Automates local environment setup by installing essential tools like Oh My Zsh, Homebrew, Python, Go, kubectl, Helm, Node.js, Poetry, Git, and Git LFS<br>- Updates shell configurations for seamless tool integration<br>- Verifies successful installations and provides a summary of the total installation time<br>- Ideal for initializing a development environment quickly and efficiently.</td>
+                        </tr>
+                    </table>
+                </blockquote>
+            </details>
+            <details>
+                <summary><b>file-ops</b></summary>
+                <blockquote>
+                    <table>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/file-ops/chunk_docs.sh'>chunk_docs.sh</a></b></td>
+                            <td>- Automates chunking and organizing documentation files into smaller, manageable parts<br>- This script splits a document into 10 sections based on line count, improving readability and navigation within the project's documentation structure.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/file-ops/aggregate_docs.sh'>aggregate_docs.sh</a></b></td>
+                            <td>- Automates concatenation of GitHub project documentation markdown files into a single file<br>- Clones the repository, searches for markdown files in predefined paths, and merges them<br>- Useful for enhancing context in learning more about a project's technical implementation.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/file-ops/modify_filenames.sh'>modify_filenames.sh</a></b></td>
+                            <td>- Automates renaming files in a specified folder to lowercase and replacing underscores with hyphens<br>- This script enhances file naming consistency within the project structure.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/file-ops/move_directory.sh'>move_directory.sh</a></b></td>
+                            <td>- Moves a specified folder to a destination directory, checking for existence of both<br>- Displays success or failure messages accordingly.</td>
+                        </tr>
+                    </table>
+                </blockquote>
+            </details>
+            <details>
+                <summary><b>builds</b></summary>
+                <blockquote>
+                    <table>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/builds/pypi.sh'>pypi.sh</a></b></td>
+                            <td>- Automates PyPI package deployment by cleaning, building, and uploading distribution files<br>- Integrates with PyPI API for seamless deployment of 'my-package'.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/builds/docker.sh'>docker.sh</a></b></td>
+                            <td>- Automates Docker image building, pushing, and multi-platform support<br>- Sets up Docker Buildx, builds and publishes the image, and creates a multi-platform image<br>- The process is completed with the published image ready for use.</td>
+                        </tr>
+                    </table>
+                </blockquote>
+            </details>
+            <details>
+                <summary><b>project-setup</b></summary>
+                <blockquote>
+                    <table>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/project-setup/create_python_project.sh'>create_python_project.sh</a></b></td>
+                            <td>- Creates essential project directories, files, and configuration settings for a Python project, including API and database configurations, logging setup, and project structure<br>- The script automates the initial project setup, ensuring a standardized layout and necessary components for seamless development and execution.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/project-setup/create_directory_structure.sh'>create_directory_structure.sh</a></b></td>
+                            <td>- Generates directory structure for a Markdown guide with various subdirectories and files<br>- Prompts user for base directory and creates the specified structure accordingly<br>- The script ensures proper organization of Markdown content for easy reference and navigation.</td>
+                        </tr>
+                    </table>
+                </blockquote>
+            </details>
+            <details>
+                <summary><b>common</b></summary>
+                <blockquote>
+                    <table>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/common/run.sh'>run.sh</a></b></td>
+                            <td>- Automate environment setup and package upgrades in the project by running the provided bash script<br>- The script activates the specified conda environment, upgrades pip, and logs the execution start and completion timestamps.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/common/clean.sh'>clean.sh</a></b></td>
+                            <td>- Implement a script to clean various artifacts in the project, such as build, test, coverage, and Python file artifacts<br>- The script provides commands to remove specific types of artifacts, enhancing project maintenance and cleanliness.</td>
+                        </tr>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/bash/common/test.sh'>test.sh</a></b></td>
+                            <td>- Executes test coverage analysis for the project by running pytest with coverage reporting<br>- The script activates the 'readmeai' conda environment, sets source and omit directories, and generates a coverage report to ensure code quality.</td>
+                        </tr>
+                    </table>
+                </blockquote>
+            </details>
+        </blockquote>
+    </details>
+    <details> <!-- make Submodule -->
+        <summary><b>make</b></summary>
+        <blockquote>
+            <details>
+                <summary><b>uv</b></summary>
+                <blockquote>
+                    <table>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/make/uv/Makefile'>Makefile</a></b></td>
+                            <td>- Facilitates managing project dependencies and virtual environments using uv tool<br>- Includes commands for installing dependencies, locking versions, syncing environments, and creating virtual environments<br>- Enhances project maintainability and reproducibility.</td>
+                        </tr>
+                    </table>
+                </blockquote>
+            </details>
+            <details>
+                <summary><b>poetry</b></summary>
+                <blockquote>
+                    <table>
+                        <tr>
+                            <td><b><a href='/Users/k01101011/Documents/GitHub/shellbox/blob/master/make/poetry/Makefile'>Makefile</a></b></td>
+                            <td>- Facilitates managing dependencies and environment for Poetry projects<br>- Includes commands to install dependencies, clean environment, remove environment, and generate requirements files<br>- Key for maintaining project dependencies and environment setup.</td>
+                        </tr>
+                    </table>
+                </blockquote>
+            </details>
+        </blockquote>
+    </details>
+</details>
+
 ---
 
+## Getting Started
 
-##  Modules
+The majority of files in this repository are configuration related. If you're looking for utility scripts to automate tasks, you can find them in the `bash` directory.
 
-<details closed><summary>Root</summary>
+### Running Utility Scripts
 
-| File                                                                              | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ---                                                                               | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [.deepsource.toml](https://github.com/eli64s/shellbox/blob/main/.deepsource.toml) | The code represents a project root directory structure for a script-based application written in shell. Main functionalities include: building the system using Docker and PyPi, ensuring standard program maintenance by providing clean, run, and test features, allowing filesystem management operations, handling software installs via Micromamba and PyFlink, and offering template for creating Python projects. It utilizes DeepSource for static code analysis on Shell scripts. |
+My favorite script is [aggregate_docs.sh](bash/file-ops/aggregate_docs.sh), which concatenates all files from a GitHub repository into a single file. Define the repository URL, paths, and file formats to aggregate the files.
 
-</details>
+I've found this script useful for when working with large language model APIs, providing the model with robust context and latest updates on a given topic I'm researching.
 
-<details closed><summary>Install</summary>
+You can run the script directly from the command line:
 
-| File                                                                                | Summary                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| ---                                                                                 | ---                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| [micromamba.sh](https://github.com/eli64s/shellbox/blob/main/install/micromamba.sh) | The script installs the latest version of Micromamba for Linux or MacOS. It identifies the OS, downloads Micromamba, assigns execution permissions, and relocates the file for global access. It initializes Micromamba, configures the default usage of conda-forge channel, and sets the channel priority to strict. The process terminates with a completion message.                                                 |
-| [pyflink.sh](https://github.com/eli64s/shellbox/blob/main/install/pyflink.sh)       | This script automates the environment setup for working with PyFlink. It checks and installs Java 11 and Python 3.7 if they're not present. It downloads and extracts PyFlink from its official source, moves it to the pyflink directory and sets the necessary environment variables. The script also sets related aliases for zsh. Once these steps are done, the shell environment is ready for PyFlink development. |
+```sh
+bash bash/file-ops/aggregate_docs.sh \
+    -r https://github.com/pydantic/pydantic \
+    -p docs \
+    -o pydantic-docs.md \
+    -n pydantic \
+    -s "*.md"
+```
 
-</details>
+You can also give the script executable permissions and run it directly:
 
-<details closed><summary>Builds</summary>
+```sh
+chmod +x bash/file-ops/aggregate_docs.sh
+```
 
-| File                                                                       | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ---                                                                        | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| [pypi.sh](https://github.com/eli64s/shellbox/blob/main/builds/pypi.sh)     | The pypi.sh script defines several operations to clean the previous Python package data, build a new package, and deploy it to PyPI (Python Package Index). The deployment details include the package name, repository URL, username, and API key for package upload. Post successful package upload, a success message shows up in the console.                                                                                                                                                                                       |
-| [docker.sh](https://github.com/eli64s/shellbox/blob/main/builds/docker.sh) | The builds/docker.sh script simplifies the process of managing a Docker image. Firstly, it constructs a FULL_IMAGE_NAME variable from user-defined components. After creating Docker Buildx, three primary functions are called: `build_image` builds a Docker image using local context, `publish_image` publishes the newly created image to a Docker registry, and `buildx_image` efficiently constructs multi-platform images. The process culminates with echoing a completion statement along with the full image's name created. |
+And then run the script:
 
-</details>
+```sh
+./aggregate_docs.sh \
+    -r https://github.com/pydantic/pydantic \
+    -p docs \
+    -o pydantic-docs.md \
+    -n pydantic \
+    -s "*.md"
+```
 
-<details closed><summary>Common</summary>
-
-| File                                                                     | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ---                                                                      | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [run.sh](https://github.com/eli64s/shellbox/blob/main/common/run.sh)     | The `common/run.sh` script initiates a series of operations starting with the activation of the Conda environment my_env, followed by the upgrade of Python package installer, pip, in this environment. It sets bash-specific options to handle errors and enables pipelining. The start and completion times of these operations are displayed. The surrounding directory tree contains additional scripts for building, testing, cleaning, file modifications, moving directories, installations, and project creation. |
-| [clean.sh](https://github.com/eli64s/shellbox/blob/main/common/clean.sh) | The clean.sh script, best understood as a maintenance script, eliminates build, test, and temporary files from a Python project environment. The removal process has specialized functions catering to distinct targets-build artifacts, Python file artifacts, test and coverage artifacts, backup and Python cache files. This script, depending on the argument passed, invokes the respective function to remove the associated files and directories, enhancing hygiene and order in the working environment.         |
-| [test.sh](https://github.com/eli64s/shellbox/blob/main/common/test.sh)   | The `test.sh` script in the `common` directory activates the readmeai Conda environment and employs the `coverage` utility to execute pytest tests on the readmeai project's source code, ignoring files and folders patterned as __init__.py and tests. The coverage report displays missed details and execution stops if coverage dips below 90%. The directory tree presents a project structure supporting Docker and PyPI builds, installation scripts, efficient file management, and Python project templates.     |
-
-</details>
-
-<details closed><summary>Files</summary>
-
-| File                                                                                          | Summary                                                                                                                                                                                                                                                                                                                                                         |
-| ---                                                                                           | ---                                                                                                                                                                                                                                                                                                                                                             |
-| [modify_filenames.sh](https://github.com/eli64s/shellbox/blob/main/files/modify_filenames.sh) | The bash script primarily functions to identify files within the specified directory (/GitHub/readme-ai/docs) and alter their filenames. It performs two alterations: converting the characters to lowercase and replacing underscores with hyphens. Changes to filenames are printed for user confimation. If the folder isn't found, the script simply exits. |
-| [move_directory.sh](https://github.com/eli64s/shellbox/blob/main/files/move_directory.sh)     | The move_directory.sh script, residing in the files directory, is designed to move a certain directory from a specified current location to a destination on the system. The script first checks existence of both source and destination directories. If both exist, it executes the move, otherwise, it logs relevant warning messages.                       |
-
-</details>
-
-<details closed><summary>Templates</summary>
-
-| File                                                                                                | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ---                                                                                                 | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| [create_py_project.sh](https://github.com/eli64s/shellbox/blob/main/templates/create_py_project.sh) | The given script automates the process of setting up a new Python project. It creates the required directory structure (such as conf, scripts, setup etc.), initial files with their necessary code (like logger.py, conf.py, etc.), configures logger, command line argument parser, configurations, testing setup, and scripting boilerplates. It also prepares the project for Docker deployment and integration, generates necessary configuration files and adds an MIT license file, a configurable.gitignore and a Makefile with commonly used routines. |
-
-</details>
+> [!TIP]
+> The shell scripts in this repository are designed to automate repetitive tasks and enhance productivity. Feel free to explore and adapt them to your workflow.
 
 ---
 
-##  Contributing
+<div align="right">
+    <a href="#-configurations-files-and-utility-scripts">
+        <img src="assets/button.svg" width="100px" height="100px" alt="return-button">
+    </a>
+</div>
 
-Contributions are welcome! Here are several ways you can contribute:
+<!-- REFERENCE LINKS -->
 
-- **[Submit Pull Requests](https://github.com/eli64s/shellbox/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-- **[Join the Discussions](https://github.com/eli64s/shellbox/discussions)**: Share your insights, provide feedback, or ask questions.
-- **[Report Issues](https://github.com/eli64s/shellbox/issues)**: Submit bugs found or log feature requests for ELI64S.
-
-#### *Contributing Guidelines*
-
-<details closed>
-<summary>Click to expand</summary>
-
-1. **Fork the Repository**: Start by forking the project repository to your GitHub account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a Git client.
-   ```sh
-   git clone <your-forked-repo-url>
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear and concise message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to GitHub**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-
-Once your PR is reviewed and approved, it will be merged into the main branch.
-
-</details>
-
----
-
-##  License
-
-
-This project is protected under the [Apache-2.0 license](LICENSE) License. For more details, refer to the [Apache License](http://www.apache.org/licenses/LICENSE-2.0) file.
-
-[**Return**](#Top)
-
----
+[return-button]: assets/button.svg

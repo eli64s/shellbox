@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 start_time=$SECONDS
 

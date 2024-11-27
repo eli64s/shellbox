@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check for Java 11 installation
 if [[ -z $(java -version 2>&1 | grep "version \"11") ]]; then

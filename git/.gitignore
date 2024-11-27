@@ -1,0 +1,43 @@
+# Build Artifacts
+*.egg-info/
+build/
+dist/
+
+# Compiled Python Files
+*.pyc
+*.pyo
+**/__pycache__/
+
+# Documentation and MkDocs
+.cache
+site
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+notebooks/
+
+# Logging
+*.log
+logs/
+
+# Python Development
+**/.mypy_cache/
+**/.pytest_cache/
+**/.ruff_cache/
+
+# System-Specific Files
+.DS_Store
+
+# Temporary Files
+*~
+
+# Testing
+*coverage*
+**/.nox/
+
+# Virtual Environment
+.env
+**/.venv/
+
+# VSCode Workspace Settings
+.vscode/
