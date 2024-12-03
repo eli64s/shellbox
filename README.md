@@ -34,7 +34,7 @@
 
 </div>
 
-<img width="100%" height="4px" src="assets/line.svg" alt="line">
+<img width="100%" height="2.5px" src="assets/line.svg" alt="line">
 
 ## Overview
 
@@ -278,8 +278,6 @@ Select a submodule to explore its contents:
 	</details>
 </details>
 
----
-
 ## Installation
 
 To get started with the utility scripts, build the project from source:
@@ -403,11 +401,11 @@ This setup maintains the repository structure while making all bash scripts acce
 
 <div align="left">
     <a href="#top">
-        <img src="assets/button.svg" width="88px" height="88px" alt="return-button">
+        <img src="assets/button.svg" width="64px" height="64px" alt="return-button">
     </a>
 </div>
 
----
+<img width="100%" height="2.5px" src="assets/line.svg" alt="line">
 
 <!-- REFERENCE LINKS -->
 
