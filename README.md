@@ -1,10 +1,10 @@
-<div align="left">
+<div align="left"><a id="top"></a>
 
 <!-- <img src="assets/logo-rainbow.svg" alt="dots">
 
 <p align="center">
 
-#### ◎ Configurations files and utility scripts
+#### ◎ Config files and utility scripts
 
 </p> -->
 
@@ -38,7 +38,7 @@
 
 ## Overview
 
-This repository contains a combination of configuration files and bash scripts to automate various development tasks. The files are organized into directories based on their purpose, such as setting up project environments, configuring version control, and enhancing the development experience.
+This repository contains configuration files and bash scripts to automate various development tasks. The files are organized into directories based on categories like Python, Git, Zsh, and more.
 
 ###  Project Structure
 
@@ -68,7 +68,7 @@ The repository is structured as follows:
     ├── vscode
     │   └── settings.json
     └── zsh
-        ├── .zshenv
+        ├── .zprofile
         └── .zshrc
 ```
 
@@ -294,7 +294,7 @@ One of my favorite scripts to use right now is [aggregate_docs.sh](bash/file-ops
 To run the script, provide the following arguments:
 
 ```sh
-bash bash/file-ops/aggregate_docs.sh \
+❯ bash bash/file-ops/aggregate_docs.sh \
     -r https://github.com/pydantic/pydantic \ # Repository URL
     -n pydantic \						  	  # Repository name
     -o pydantic-docs.md \					  # Your output file
@@ -305,13 +305,13 @@ bash bash/file-ops/aggregate_docs.sh \
 Alternatively, make the script executable:
 
 ```sh
-chmod +x bash/file-ops/aggregate_docs.sh
+❯ chmod +x bash/file-ops/aggregate_docs.sh
 ```
 
 And run it directly:
 
 ```sh
-./aggregate_docs.sh \
+❯ ./aggregate_docs.sh \
     -r https://github.com/pydantic/pydantic \
     -p docs \
     -o pydantic-docs.md \
@@ -319,11 +319,70 @@ And run it directly:
     -s "*.md"
 ```
 
+## Advanced Configuration
+
+Say you want to clone this repository and use the `.zshrc` file as your shell configuration, and have quick access to the function under the `bash` directory. We can set this up by creating symlinks from the repository to your home directory.
+
+1. Create symlinks from your repository to your home directory:
+
+	```sh
+	# Current repository location
+	❯ DOTS_DIR="/Users/<username>/GitHub/dots"
+
+	# Create symlinks
+	❯ ln -sf "$DOTS_DIR/zsh/.zshrc" "$HOME/.zshrc"
+	❯ ln -sf "$DOTS_DIR/bash" "$HOME/.zsh/functions"
+	```
+
+2. Add the following line to your `.zshrc` file to source the utility scripts:
+
+	```zsh
+	# -- GitHub/dots Repository Integration ---------------------------------------------
+	DOTS_DIR="$HOME/Documents/GitHub/dots"
+	DOTS_SCRIPTS="$DOTS_DIR/bash"
+
+	# Function to load scripts from directory
+	function load_scripts() {
+		local dir="$1"
+		if [ -d "$dir" ]; then
+			# Create functions for all scripts instead of aliases
+			for script in "$dir"/*.sh; do
+				if [ -f "$script" ]; then
+					local func_name=$(basename "$script" .sh)
+					eval "function $func_name() { $script \"\$@\" }"
+				fi
+			done
+		fi
+	}
+
+	# Load all script directories from dots/bash
+	for category in $DOTS_SCRIPTS/*; do
+		if [ -d "$category" ]; then
+			load_scripts "$category"
+		fi
+	done
+
+	# Add custom functions directory to fpath
+	fpath+=("$DOTS_DIR/zsh/functions")
+	```
+
+3. Now you can run the scripts directly from your terminal:
+
+	```sh
+	❯ aggregate_docs -r https://github.com/pydantic/pydantic-ai \
+			 -p docs \
+			 -o pydantic-ai-docs.md \
+			 -n pydantic-ai \
+			 -s "*.md"
+	```
+
+This setup maintains the repository structure while making all bash scripts accessible as commands in your shell.
+
 > [!TIP]
-> The [bash scripts][dots.bash] directory contains a variety of utility scripts for automating tasks like environment setup, file operations, and codebase management.
+> The [bash scripts][dots.bash] directory contains a variety of scripts for automating tasks like environment setup, file operations, and codebase management.
 
 <div align="left">
-    <a href="#overview">
+    <a href="#top">
         <img src="assets/button.svg" width="88px" height="88px" alt="return-button">
     </a>
 </div>

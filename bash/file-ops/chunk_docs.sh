@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 base_dir="pydantic/docs"
-output_dir="$base_dir/chunks"
 file_path="pydantic.md"
+output_dir="$base_dir/chunks"
 
 mkdir -p $output_dir
 

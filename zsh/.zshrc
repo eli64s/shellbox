@@ -1,9 +1,10 @@
-# Oh My ZSH settings
+# .zshrc: sets the environment for interactive shells.
 
+# -- Oh My Zsh ------------------------------------------------
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="mgutz"
 
+# -- Plugins ------------------------------------------------
 plugins=(
   dotenv
   git
@@ -100,6 +101,34 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history
+
+# -- GitHub/dots Repository Integration ---------------------------------------------
+DOTS_DIR="$HOME/Documents/GitHub/dots"
+DOTS_SCRIPTS="$DOTS_DIR/bash"
+
+# Function to load scripts from directory
+function load_scripts() {
+    local dir="$1"
+    if [ -d "$dir" ]; then
+        # Create functions for all scripts instead of aliases
+        for script in "$dir"/*.sh; do
+            if [ -f "$script" ]; then
+                local func_name=$(basename "$script" .sh)
+                eval "function $func_name() { $script \"\$@\" }"
+            fi
+        done
+    fi
+}
+
+# Load all script directories from dots/bash
+for category in $DOTS_SCRIPTS/*; do
+    if [ -d "$category" ]; then
+        load_scripts "$category"
+    fi
+done
+
+# Add custom functions directory to fpath
+fpath+=("$DOTS_DIR/zsh/functions")
 
 # -- FZF Settings and Keybindings --------------------------------------------
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"

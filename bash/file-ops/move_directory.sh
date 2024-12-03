@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 folder_name="GitHub/readme-ai/docs/archive"
-
 destination="Documents/folder"
 
 if [[ -d "$folder_name" ]]; then

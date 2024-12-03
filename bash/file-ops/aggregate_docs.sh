@@ -1,20 +1,13 @@
 #!/usr/bin/env bash
 
-# : '
-# This script automates the process of concatenating a GitHub project\'s documentation markdown 
-# files into a single markdown file. It clones the repository, searches for markdown files in the 
-# predefined paths, and concatenates them into a single file. I find this script useful for adding
-# context to LLM prompts when I\'m wanting to learn more about a project\'s technical implementation.
-# '
-
 set -euo pipefail
 
 # Set empty values for variables initially, to be assigned from command line
-REPO_NAME="pydantic"
-REPO_URL="https://github.com/pydantic/pydantic"
-OUTPUT_FILE="pydantic-docs.md"
-POSSIBLE_PATHS=(docs,https://github.com/pydantic/pydantic/tree/main/docs/)
-TO_SEARCH="*.rst" # "*.md"
+REPO_NAME="pydantic-ai"
+REPO_URL="https://github.com/pydantic/pydantic-ai"
+OUTPUT_FILE="pydantic-ai-docs.md"
+POSSIBLE_PATHS=(docs,https://github.com/pydantic/pydantic-ai/tree/main/docs/)
+TO_SEARCH="*.md"
 
 CURRENT_DIR=$(pwd)
 TMP_DIR=$(mktemp -d)
