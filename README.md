@@ -14,7 +14,8 @@
 ██   ██ ██    ██    ██    ███████
 ██   ██ ██    ██    ██         ██
 ██████   ██████     ██    ███████
- configuration files and utility scripts
+
+◎ Config files and utility scripts
 ```
 
 <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?style=%7B0%7D&logo=Visual-Studio-Code&logoColor=white" alt="Visual%20Studio%20Code">
@@ -77,13 +78,6 @@ Select a submodule to explore its contents:
 
 <details open>
 	<summary><b><code>DOTS/</code></b></summary>
-	<details> <!-- __root__ Submodule -->
-		<summary><b>__root__</b></summary>
-		<blockquote>
-			<table>
-			</table>
-		</blockquote>
-	</details>
 	<details> <!-- python Submodule -->
 		<summary><b>python</b></summary>
 		<blockquote>
@@ -329,7 +323,7 @@ And run it directly:
 > The [bash scripts][dots.bash] directory contains a variety of utility scripts for automating tasks like environment setup, file operations, and codebase management.
 
 <div align="left">
-    <a href="#-configurations-files-and-utility-scripts">
+    <a href="#overview">
         <img src="assets/button.svg" width="88px" height="88px" alt="return-button">
     </a>
 </div>
