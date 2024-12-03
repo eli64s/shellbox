@@ -1,12 +1,21 @@
-<div align="center">
+<div align="left">
 
-<img src="assets/logo-rainbow.svg" alt="dots">
+<!-- <img src="assets/logo-rainbow.svg" alt="dots">
 
 <p align="center">
 
 #### ◎ Configurations files and utility scripts
 
-</p>
+</p> -->
+
+```console
+██████   ██████  ████████ ███████
+██   ██ ██    ██    ██    ██
+██   ██ ██    ██    ██    ███████
+██   ██ ██    ██    ██         ██
+██████   ██████     ██    ███████
+ configuration files and utility scripts
+```
 
 <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?style=%7B0%7D&logo=Visual-Studio-Code&logoColor=white" alt="Visual%20Studio%20Code">
 
