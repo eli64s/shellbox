@@ -13,12 +13,13 @@ CURRENT_DIR=$(pwd)
 TMP_DIR=$(mktemp -d)
 
 usage() {
+    echo ""
     echo "Usage: $0 [-r REPO_URL] [-p POSSIBLE_PATHS] [-o OUTPUT_FILE] [-n REPO_NAME] [-s TO_SEARCH]"
     echo "  -r REPO_URL       URL of the GitHub repository to clone (required)"
     echo "  -p POSSIBLE_PATHS Comma-separated list of possible paths to search for markdown files (required)"
     echo "  -o OUTPUT_FILE    Name of the output markdown file (required)"
     echo "  -n REPO_NAME      Name of the repository (required)"
-    echo "  -s TO_SEARCH      Pattern to search for markdown files (e.g., \"*.rst\") (required)"
+    echo "  -s TO_SEARCH      Pattern to search for markdown files (e.g., \"*.md\") (required)"
     exit 1
 }
 
