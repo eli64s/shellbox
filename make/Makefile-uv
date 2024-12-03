@@ -1,21 +1,35 @@
-# uv commands: https://docs.astral.sh/uv/
+# uv: https://docs.astral.sh/uv/
+
+UV := uv
+UV_PIP := $(UV) pip
+PYPROJECT := pyproject.toml
 
 .PHONY: uv-install-editable
 uv-editable: ## Install all project dependencies in editable mode
-	uv pip install -e ".[dev,docs,test]"
+	$(UV_PIP) install -e ".[dev,docs,test]"
 
 .PHONY: uv-install
 uv-install: ## Install all project dependencies
-	uv pip install -r pyproject.toml --all-extras
+	$(UV_PIP) install -r pyproject.toml --all-extras
 
 .PHONY: uv-lock
 uv-lock: ## Lock dependencies declared in pyproject.toml
-	uv pip compile pyproject.toml --all-extras
+	$(UV_PIP) compile pyproject.toml --all-extras
 
 .PHONY: uv-sync
 uv-sync: ## Sync environment with requirements files
-	uv pip sync pyproject.toml --all-extras
+	$(UV_PIP) sync pyproject.toml --all-extras
 
 .PHONY: uv-venv
 uv-venv: ## Create a virtual environment using uv
 	uv venv --python 3.11
+
+.PHONY: help
+help: ## Display this help
+	@echo ""
+	@echo "Usage: make [target]"
+	@echo ""
+	@awk 'BEGIN {FS = ":.*?## "; printf "\033[1m%-20s %-50s\033[0m\n", "Target", "Description"; \
+	              printf "%-20s %-50s\n", "------", "-----------";} \
+	      /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %-50s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	@echo ""
