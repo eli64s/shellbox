@@ -1,6 +1,6 @@
 <div align="left"><a id="top"></a>
 
-<!-- <img src="assets/logo-rainbow.svg" alt="dots">
+<!-- <img src="assets/svg/logo-rainbow.svg" alt="dots">
 
 <p align="center">
 
@@ -34,7 +34,7 @@
 
 </div>
 
-<img width="100%" height="2.5px" src="assets/line.svg" alt="line">
+<img width="100%" height="2.5px" src="assets/svg/line.svg" alt="line">
 
 ## Overview
 
@@ -401,11 +401,11 @@ This setup maintains the repository structure while making all bash scripts acce
 
 <div align="left">
     <a href="#top">
-        <img src="assets/button.svg" width="64px" height="64px" alt="return-button">
+        <img src="assets/svg/button.svg" width="64px" height="64px" alt="return-button">
     </a>
 </div>
 
-<img width="100%" height="2.5px" src="assets/line.svg" alt="line">
+<img width="100%" height="2.5px" src="assets/svg/line.svg" alt="line">
 
 <!-- REFERENCE LINKS -->
 
