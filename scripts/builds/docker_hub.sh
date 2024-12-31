@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 
-USER="my-username"
-IMAGE="my-image"
+IMAGE="readme-ai"
+USER="zeroxeli"
 VERSION="latest"
 FULL_IMAGE_NAME="${USER}/${IMAGE}:${VERSION}"
- 
+
 build_image() {
-  echo "Building ${FULL_IMAGE_NAME}"
-  docker build -t "${FULL_IMAGE_NAME}" .
+    echo "Building ${FULL_IMAGE_NAME}"
+    docker build -t "${FULL_IMAGE_NAME}" .
 }
 
 publish_image() {
-  echo "Pushing ${FULL_IMAGE_NAME}"
-  docker push "${FULL_IMAGE_NAME}"
+    echo "Pushing ${FULL_IMAGE_NAME}"
+    docker push "${FULL_IMAGE_NAME}"
 }
 
 buildx_image() {
-  echo "Building and pushing multi-platform image ${FULL_IMAGE_NAME}"
-  docker buildx build \
+    echo "Building and pushing multi-platform image ${FULL_IMAGE_NAME}"
+    docker buildx build \
     --platform linux/amd64,linux/arm64 \
     --tag "${FULL_IMAGE_NAME}" \
     --push .

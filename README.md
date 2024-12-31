@@ -45,46 +45,47 @@ This repository contains configuration files and bash scripts to automate variou
 The repository is structured as follows:
 
 ```sh
-└── dots/
-    ├── bash
-    │   ├── builds
-    │   │   ├── docker_hub.sh
-    │   │   └── pypi.sh
-    │   ├── common
-    │   │   ├── clean.sh
-    │   │   ├── run.sh
-    │   │   └── test.sh
-    │   ├── file-ops
-    │   │   ├── aggregate_docs.sh
-    │   │   ├── chunk_docs.sh
-    │   │   ├── modify_filenames.sh
-    │   │   └── move_directory.sh
-    │   ├── install
-    │   │   ├── local_dependencies.sh
-    │   │   ├── local_dependencies_uninstall.sh
-    │   │   ├── micromamba.sh
-    │   │   └── pyflink.sh
-    │   └── project-setup
-    │       ├── create_directory_structure.sh
-    │       ├── create_python_project.sh
-    │       └── tree_to_directory.sh
-    ├── git
-    │   ├── .gitcommit_template
-    │   ├── .gitconfig
-    │   ├── .gitignore
-    │   └── .gitignore_global
-    ├── make
-    │   ├── Makefile-poetry
-    │   └── Makefile-uv
-    ├── python
-    │   ├── .ruff.toml
-    │   ├── pyproject.toml
-    │   └── pytest.ini
-    ├── vscode
-    │   └── settings.json
-    └── zsh
-        ├── .zprofile
-        └── .zshrc
+.
+├── make
+│   ├── Makefile-poetry
+│   └── Makefile-uv
+├── python
+│   ├──  noxfile.py
+│   ├── conf
+│   │   ├── pyproject-poetry.toml
+│   │   └── pyproject-uv.toml
+│   ├── lint
+│   ├── tests
+│   │   ├── behave.ini
+│   │   └── pytest.ini
+│   └── type-checker
+│       └── mypy.ini
+├── scripts
+│   ├── builds
+│   │   ├── docker_hub.sh
+│   │   └── pypi.sh
+│   ├── common
+│   │   ├── clean.sh
+│   │   ├── run.sh
+│   │   └── test.sh
+│   ├── cookie-cutter
+│   │   └── create_structure.sh
+│   ├── file-system
+│   │   ├── aggregate_docs.sh
+│   │   ├── chunk_docs.sh
+│   │   └── modify_filenames.sh
+│   └── install
+│       ├── local_dependencies.sh
+│       ├── local_dependencies_uninstall.sh
+│       ├── micromamba.sh
+│       ├── migrate_to_uv.sh
+│       ├── precommit.sh
+│       └── pyflink.sh
+├── vscode
+│   └── settings.json
+└── zsh
+    ├── .zprofile
+	└── .zshrc
 ```
 
 ### Project Index

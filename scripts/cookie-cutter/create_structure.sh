@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Function to create directories and files
+set -e
+
 create_structure() {
     local base_dir="$1"
     shift
@@ -16,10 +17,8 @@ create_structure() {
     done
 }
 
-# Prompt for base directory
-read -p "Enter the base directory to create the structure: " base_dir
+read -rp "Enter the base directory to create the structure: " base_dir
 
-# Define the structure
 structure=(
     "markdown-guide/"
     "markdown-guide/README.md"
@@ -54,7 +53,6 @@ structure=(
     "markdown-guide/html-elements/spacing-entities.md"
 )
 
-# Create the structure
 create_structure "$base_dir" "${structure[@]}"
 
 echo "Directory structure created successfully in $base_dir"

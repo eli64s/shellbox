@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
-set -e
 
-# Config
-PACKAGE="my-package"
+set -eo pipefail
+
+PYPI_API_KEY="$1"
+
+if [ -z "$PYPI_API_KEY" ]; then
+    echo "Please provide your PyPI API key as an argument."
+    exit 1
+fi
+
+API_KEY="$PYPI_API_KEY"
+PACKAGE="readmeai"
 REPOSITORY="https://upload.pypi.org/legacy/"
 USERNAME="__token__"
-API_KEY="$PYPI_API_KEY"
 
 function clean {
-    bash scripts/clean.sh
+    bash scripts/common/clean.sh
 }
 
 function build {
@@ -24,13 +31,13 @@ function upload {
 }
 
 function main {
-    
+
     clean
     build
-    
+
     echo "Uploading $PACKAGE distribution files"
     upload
-    
+
     echo "Successfully deployed new version of $PACKAGE to PyPI"
 }
 

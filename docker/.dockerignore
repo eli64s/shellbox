@@ -1,0 +1,61 @@
+# Build Artifacts
+build/
+dist/
+*.egg-info/
+
+# Compiled Python Files
+*.pyc
+*.pyo
+__pycache__/
+
+# Documentation and Markdown
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+docs/
+examples/
+mkdocs.yml
+site
+
+# Git
+.git/
+.github/
+.gitignore
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+notebooks/
+outputs/
+
+# Logging
+logs/
+*.log
+
+# Python Tools and Caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# System-Specific Files
+.DS_Store
+
+# Temporary Files
+*~
+
+# Testing
+*coverage*
+.nox/
+.reports/
+scripts/
+setup/
+tests/
+noxfile.py
+
+# Virtual Environment
+.env
+.venv/
+
+# VSCode Workspace Settings
+.vscode/
+
+# Work In Progress (WIP)

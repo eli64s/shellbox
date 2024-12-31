@@ -94,7 +94,7 @@ fi
 echo "Concatenating files..."
 if [ -n "$MARKDOWN_FILES" ]; then
     > "$TMP_DIR/$OUTPUT_FILE"
-    
+
     find "$TMP_DIR/$REPO_NAME" -type f -name "$TO_SEARCH" | while IFS= read -r file; do
         if [ -f "$file" ]; then
             echo "Adding content from $file"
@@ -106,7 +106,7 @@ if [ -n "$MARKDOWN_FILES" ]; then
             echo "Warning: File $file not found or not accessible"
         fi
     done
-    
+
     mv "$TMP_DIR/$OUTPUT_FILE" "$CURRENT_DIR/" || echo "Failed to move $OUTPUT_FILE to $CURRENT_DIR"
     echo "All files have been concatenated into $CURRENT_DIR/$OUTPUT_FILE"
 else

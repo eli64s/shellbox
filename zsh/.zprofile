@@ -1,6 +1,4 @@
-# .zprofile: set the environment for login shells.
-
-# -- Development Environment Setup -------------------------------------------
+# -- .zprofile: set the environment for login shells.
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"

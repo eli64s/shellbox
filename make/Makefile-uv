@@ -1,28 +1,49 @@
 # uv: https://docs.astral.sh/uv/
 
-UV := uv
-UV_PIP := $(UV) pip
-PYPROJECT := pyproject.toml
+PY_VERSION := 3.11
 
-.PHONY: uv-install-editable
-uv-editable: ## Install all project dependencies in editable mode
-	$(UV_PIP) install -e ".[dev,docs,test]"
+.PHONY: build
+build: ## Build the distribution package using uv
+	uv build
+	uv pip install dist/splitme_ai-0.1.0-py3-none-any.whl
 
-.PHONY: uv-install
-uv-install: ## Install all project dependencies
-	$(UV_PIP) install -r pyproject.toml --all-extras
+.PHONY: install
+install: ## Install all dependencies from pyproject.toml
+	uv sync --dev --group test --group docs --group lint --all-extras
 
-.PHONY: uv-lock
-uv-lock: ## Lock dependencies declared in pyproject.toml
-	$(UV_PIP) compile pyproject.toml --all-extras
+.PHONY: install-editable
+install-editable:: ## Install all project dependencies in editable mode
+	uv pip install -e ".[dev,docs,test]"
 
-.PHONY: uv-sync
-uv-sync: ## Sync environment with requirements files
-	$(UV_PIP) sync pyproject.toml --all-extras
+.PHONY: lock
+lock: ## Lock dependencies declared in pyproject.toml
+	uv pip compile pyproject.toml --all-extras
 
-.PHONY: uv-venv
-uv-venv: ## Create a virtual environment using uv
-	uv venv --python 3.11
+.PHONY: requirements
+requirements: ## Generate requirements files from pyproject.toml
+	uv pip compile pyproject.toml -o requirements.txt
+	uv pip compile pyproject.toml --all-extras -o requirements-dev.txt
+
+.PHONY: sync
+sync: ## Sync environment with pyproject.toml
+	uv sync --all-groups --dev
+
+.PHONY: update
+update: ## Update all dependencies from pyproject.toml
+	uv lock --upgrade
+
+.PHONY: venv
+venv: ## Create a virtual environment
+	uv venv --python $(PY_VERSION)
+
+
+# -- Utilities ---------------------------------------------------------------
+
+
+.PHONY: extract-packages
+extract-packages: uv-requirements ## Extract packages from requirements files
+    @grep -E '^[a-zA-Z0-9_\-\.]+==' requirements.txt | cut -d'=' -f1 > _requirements.txt
+    @grep -E '^[a-zA-Z0-9_\-\.]+==' requirements-dev.txt | cut -d'=' -f1 > _requirements-dev.txt
 
 .PHONY: help
 help: ## Display this help

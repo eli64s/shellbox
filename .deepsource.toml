@@ -2,3 +2,7 @@ version = 1
 
 [[analyzers]]
 name = "shell"
+enabled = true
+
+  [analyzers.meta]
+    dialect = "zsh"

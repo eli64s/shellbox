@@ -1,0 +1,44 @@
+[run]
+branch = True
+source = src
+data_file = tests/.reports/.coverage
+parallel = True
+concurrency = multiprocessing
+dynamic_context = test_function
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if self.debug:
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    pass
+    raise ImportError
+    except ImportError:
+    if TYPE_CHECKING:
+    @overload
+    class .*\bProtocol\):
+
+omit =
+    tests/*
+    */__init__.py
+    setup.py
+    noxfile.py
+    docs/*
+    examples/*
+    */migrations/*
+
+precision = 2
+show_missing = True
+skip_covered = True
+sort = Cover
+fail_under = 80
+
+[html]
+directory = tests/.reports/coverage
+title = Coverage Report
+show_contexts = True
+
+[xml]
+output = tests/.reports/coverage.xml

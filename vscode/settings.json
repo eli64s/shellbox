@@ -27,7 +27,14 @@
   // File associations and handling
   "files.associations": {
     "*.html": "html",
-    "*.md": "markdown"
+    "*.md": "markdown",
+    "*.svg": "xml",
+    ".yml": "yaml",
+    ".yaml": "yaml",
+    ".toml": "toml",
+    ".zshrc": "shellscript",
+    ".bash": "shellscript",
+    ".jsonc": "jsonc",
   },
   "security.workspace.trust.untrustedFiles": "open",
 
@@ -54,7 +61,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "editor.defaultFormatter": null
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "[jinja-html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -109,7 +116,7 @@
 
   // Jupyter and Notebook settings
   "jupyter.askForKernelRestart": false,
-  "notebook.output.textLineLimit": 69,
+  "notebook.output.textLineLimit": 79,
   "notebook.output.wordWrap": true,
   "notebook.lineNumbers": "on",
   "notebook.formatOnSave.enabled": true,
@@ -130,14 +137,16 @@
   "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
   "markdown-preview-enhanced.frontMatterRenderingOption": "table",
   "markdown-preview-enhanced.HTML5EmbedUseLinkSyntax": true,
-  
+
   // GitHub Copilot settings
   "github.copilot.enable": {
     "*": true,
     "plaintext": true,
     "markdown": true,
     "scminput": false,
-    "yaml": true
+    "yaml": true,
+    "yml": true,
+    "makefile": true
   },
   "github.copilot.editor.enableAutoCompletions": true,
 
@@ -146,5 +155,5 @@
   "hediet.vscode-drawio.resizeImages": null,
   "cmake.configureOnOpen": true,
   "html.format.wrapLineLength": 888,
-  "cSpell.language": "en,en-GB",
+  "cSpell.language": "en,en-GB"
 }
