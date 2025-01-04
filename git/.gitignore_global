@@ -6,3 +6,21 @@
 *.swo
 *~
 .idea/
+
+# Build artifacts
+/bin
+/obj
+/dist
+/node_modules
+
+# Environments
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.nox

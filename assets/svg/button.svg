@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30">
   <defs>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#007ACC;stop-opacity:1" />
-      <stop offset="20%" style="stop-color:#3776AB;stop-opacity:1" />
-      <stop offset="40%" style="stop-color:#4EAA25;stop-opacity:1" />
-      <stop offset="60%" style="stop-color:#D7FF64;stop-opacity:1" />
-      <stop offset="80%" style="stop-color:#F05032;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#F15A24;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#00CFE6;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#4361EE;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#1AC8A2;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FFD23F;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#FF6B35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF3366;stop-opacity:1" />
     </linearGradient>
     <linearGradient id="fillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
@@ -14,6 +14,7 @@
     </linearGradient>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&amp;display=swap');
+
       .button-text {
         font-family: 'Inter', Arial, sans-serif;
         font-weight: 500;
@@ -21,11 +22,8 @@
       }
     </style>
   </defs>
-
-  <rect x="1" y="1" width="98" height="28" rx="6" fill="url(#fillGrad)" 
-        stroke="url(#grad1)" stroke-width="4"/>
-  <rect x="5" y="5" width="90" height="20" rx="4" fill="none" 
-        stroke="white" stroke-width="1"/>
+  <rect x="1" y="1" width="98" height="28" rx="6" fill="url(#fillGrad)" stroke="url(#grad1)" stroke-width="4" />
+  <rect x="5" y="5" width="90" height="20" rx="4" fill="none" stroke="white" stroke-width="1" />
   <text x="50" y="17" fill="#2d3436" font-size="12" class="button-text" text-anchor="middle" dominant-baseline="middle">
     ⬆ Return
   </text>

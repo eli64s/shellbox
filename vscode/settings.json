@@ -39,18 +39,6 @@
   "security.workspace.trust.untrustedFiles": "open",
 
   // Language-specific settings
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll": true,
-      "source.organizeImports": true
-    },
-    "editor.rulers": [88, 120],
-    "editor.suggestSelection": "first",
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true
-  },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
@@ -89,18 +77,26 @@
   },
 
   // Python-specific settings
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "always",
+      "source.organizeImports.ruff": "always",
+      "source.unusedImports.ruff": "always"
+    }
+  },
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.gotoDefinitionInStringLiteral": true,
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.diagnosticMode": "workspace",
+  // "python.analysis.inlayHints.functionReturnTypes": true,
+  // "python.analysis.inlayHints.variableTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   "pythonTestExplorer.testFramework": "pytest",
-
-  // Ruff settings
-  "ruff.organizeImports": true,
-  "ruff.fixAll": true,
 
   // AutoDocstring settings
   "autoDocstring.docstringFormat": "numpy",
@@ -116,13 +112,13 @@
 
   // Jupyter and Notebook settings
   "jupyter.askForKernelRestart": false,
-  "notebook.output.textLineLimit": 79,
+  "notebook.output.textLineLimit": 69,
   "notebook.output.wordWrap": true,
   "notebook.lineNumbers": "on",
   "notebook.formatOnSave.enabled": true,
   "notebook.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports.ruff": true
+    "source.fixAll.ruff": "always",
+    "source.organizeImports.ruff": "always",
   },
   "notebook.consolidatedRunButton": true,
   "notebook.output.scrolling": true,
