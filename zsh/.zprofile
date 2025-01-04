@@ -19,5 +19,5 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # Development directories
-export PROJECTS_DIR="$HOME/Documents/GitHub"
-export DOTS_DIR="$PROJECTS_DIR/dots"
+# export PROJECTS_DIR="$HOME/Documents/GitHub"
+# export DOTS_DIR="$PROJECTS_DIR/dots"
