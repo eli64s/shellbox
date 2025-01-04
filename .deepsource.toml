@@ -5,4 +5,4 @@ name = "shell"
 enabled = true
 
   [analyzers.meta]
-    dialect = "zsh"
+    dialect = "bash"
