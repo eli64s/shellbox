@@ -1,8 +1,10 @@
-version = 1
+version = "1.0"
 
 [[analyzers]]
 name = "shell"
-enabled = true
 
   [analyzers.meta]
-    dialect = "zsh"
+  shell = "bash"
+
+[[analyzers]]
+name = "python"

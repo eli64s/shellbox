@@ -213,4 +213,4 @@ This setup maintains the repository structure while making all bash scripts acce
 
 <!-- REFERENCE LINKS -->
 [aggregate_docs.sh]: scripts/file/aggregate_docs.sh
-[scripts]: https://github.com/eli64s/dots/tree/main/bash
+[scripts]: https://github.com/eli64s/dots/tree/main/scripts

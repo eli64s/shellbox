@@ -1,8 +1,8 @@
-# ~/.zshrc: Configure interactive zsh shell.
+# ~/.zshrc: Configure interactive Zsh shell.
 
 # Oh-My-Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="mgutz"
+ZSH_THEME="mgutz"  # Set your preferred theme
 
 # Oh-My-Zsh plugins
 plugins=(
@@ -18,9 +18,10 @@ plugins=(
     # zsh-autosuggestions
 )
 
+# Source Oh-My-Zsh to enable its features and plugins
 source $ZSH/oh-my-zsh.sh
 
-# Initialize completion for Zsh
+# Initialize completion system
 fpath=($HOME/.zfunc $fpath)
 autoload -Uz compinit
 compinit
@@ -30,7 +31,7 @@ if command -v pyenv >/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
-# Initialize uv for package management
+# Initialize uv (Assuming 'uv' is a valid command)
 if command -v uv >/dev/null 2>&1; then
     eval "$(uv generate-shell-completion zsh)"
 fi
@@ -100,7 +101,7 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
-# FZF Configuration
+# FZF configuration
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --preview 'cat {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -121,17 +122,16 @@ if [ -f "$GCLOUD_PATH/completion.zsh.inc" ]; then
 fi
 
 # Autosuggestions Configuration
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 # Source additional tools (must be at the end)
-# Uncomment to enable zsh-syntax-highlighting
-# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Uncomment to enable zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Uncomment if you want to enable zsh-autosuggestions
+# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# GitHub/Dots repository integration
-# DOTS_DIR="$HOME/Documents/GitHub/dots"
+# GitHub/dots symlinked scripts
+# DOTS_DIR="$HOME/Projects/GitHub/dots"
 # if [ -d "$DOTS_DIR/scripts" ]; then
 #     for script in "$DOTS_DIR/scripts"/*.sh; do
 #         if [ -f "$script" ] && [ -x "$script" ]; then
@@ -141,4 +141,5 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fi
 
 # Optional: Customize the Shell Prompt
+# Uncomment and modify the following line to set a custom prompt
 # PROMPT='%F{218}%1~ %F{99}$ %f'
